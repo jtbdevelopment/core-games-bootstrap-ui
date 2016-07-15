@@ -1,0 +1,31 @@
+{
+  "generator-angularjs-library": {
+    "props": {
+      "author": {
+        "name": "JTB Development",
+        "email": "jtbdevelopment@gmail.com"
+      },
+      "libraryName": {
+        "original": "core-games-bootstrap-ui",
+        "camelized": "coreGamesBootstrapUi",
+        "dasherized": "core-games-bootstrap-ui",
+        "slugified": "core-games-bootstrap-ui",
+        "parts": [
+          "core",
+          "games",
+          "bootstrap",
+          "ui"
+        ]
+      },
+      "includeModuleDirectives": true,
+      "includeModuleFilters": true,
+      "includeModuleServices": true,
+      "includeAngularModuleResource": true,
+      "includeAngularModuleCookies": true,
+      "includeAngularModuleSanitize": true,
+      "librarySrcDirectory": "src/core-games-bootstrap-ui",
+      "libraryUnitTestDirectory": "test/unit/core-games-bootstrap-ui",
+      "libraryUnitE2eDirectory": "test/e2e/core-games-bootstrap-ui"
+    }
+  }
+}
