@@ -1,6 +1,5 @@
 'use strict';
 
-//  TODO - this is dependent on angular-bootstrap - this should get removed from this library
 angular.module('coreGamesBootstrapUi.controllers').controller('CoreBootstrapInviteCtrl',
     ['$uibModalInstance', '$scope', 'invitableFriends', 'message', 'jtbFacebook',
         function ($uibModalInstance, $scope, invitableFriends, message, jtbFacebook) {
