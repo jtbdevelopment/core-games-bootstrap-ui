@@ -33,20 +33,21 @@
 'use strict';
 
 angular.module('coreGamesBootstrapUi.controllers').controller('CoreBootstrapInviteCtrl',
-    ['$uibModalInstance', '$scope', 'invitableFriends', 'message', 'jtbFacebook',
-        function ($uibModalInstance, $scope, invitableFriends, message, jtbFacebook) {
-            $scope.invitableFriends = invitableFriends;
-            $scope.chosenFriends = [];
-            $scope.message = message;
-            $scope.invite = function () {
+    ['$uibModalInstance', 'invitableFriends', 'message', 'jtbFacebook',
+        function ($uibModalInstance, invitableFriends, message, jtbFacebook) {
+            var controller = this;
+            controller.invitableFriends = invitableFriends;
+            controller.chosenFriends = [];
+            controller.message = message;
+            controller.invite = function () {
                 var ids = [];
-                angular.forEach($scope.chosenFriends, function (chosen) {
+                angular.forEach(controller.chosenFriends, function (chosen) {
                     ids.push(chosen.id);
                 });
                 jtbFacebook.inviteFriends(ids, message);
                 $uibModalInstance.close();
             };
-            $scope.cancel = function () {
+            controller.cancel = function () {
                 $uibModalInstance.dismiss();
             };
         }]);
@@ -79,29 +80,30 @@ angular.module('coreGamesBootstrapUi.controllers')
 
 angular.module('coreGamesBootstrapUi.controllers')
     .controller('CoreBootstrapSignInCtrl',
-    ['$scope', '$window', '$cookies', 'jtbFacebook',
-        function ($scope, $window, $cookies, jtbFacebook) {
-            $scope.message = 'Initializing...';
-            $scope.showFacebook = false;
-            $scope.showManual = false;
-            $scope.csrf = $cookies['XSRF-TOKEN'];
+    ['$window', '$cookies', 'jtbFacebook',
+        function ($window, $cookies, jtbFacebook) {
+            var controller = this;
+            controller.message = 'Initializing...';
+            controller.showFacebook = false;
+            controller.showManual = false;
+            controller.csrf = $cookies['XSRF-TOKEN'];
 
             function showLoginOptions() {
-                $scope.showFacebook = true;
-                $scope.showManual =
+                controller.showFacebook = true;
+                controller.showManual =
                     $window.location.href.indexOf('localhost') > -1 ||
                     $window.location.href.indexOf('-dev') > -1;
-                $scope.message = '';
+                controller.message = '';
             }
 
             function autoLogin() {
-                $scope.showFacebook = false;
-                $scope.showManual = false;
-                $scope.message = 'Logging in via Facebook';
+                controller.showFacebook = false;
+                controller.showManual = false;
+                controller.message = 'Logging in via Facebook';
                 $window.location = '/auth/facebook';
             }
 
-            $scope.fbLogin = function () {
+            controller.fbLogin = function () {
                 jtbFacebook.initiateFBLogin().then(function (details) {
                     if (!details.auto) {
                         showLoginOptions();

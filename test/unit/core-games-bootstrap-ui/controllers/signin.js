@@ -36,131 +36,114 @@ describe('Controller: CoreBootstrapSignInCtrl', function () {
         });
     }));
 
+    function checkStandardStartingExpectations() {
+        expect(SignInCtrl.csrf).toEqual('TOKEN');
+        expect(SignInCtrl.showFacebook).toEqual(false);
+        expect(SignInCtrl.showManual).toEqual(false);
+        expect(SignInCtrl.message).toEqual('Initializing...');
+    }
+
     it('initializes', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
     });
 
     it('initializes and can autologin', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         autoLogin.resolve({auto: true, permissions: 'perm'});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Logging in via Facebook');
+        expect(SignInCtrl.showFacebook).toEqual(false);
+        expect(SignInCtrl.showManual).toEqual(false);
+        expect(SignInCtrl.message).toEqual('Logging in via Facebook');
         expect(window.location).toEqual('/auth/facebook');
     });
 
     it('initializes and cannot autologin with localhost', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'somethinglocalhostsomething'};
         autoLogin.resolve({auto: false, permissions: 'perm'});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('errors with localhost', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'somethinglocalhostsomething'};
         autoLogin.reject();
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('initializes and cannot autologin with -dev', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'something-devsomething'};
         autoLogin.resolve({auto: false, permissions: 'perm'});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('errors with -dev', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'something-devsomething'};
         autoLogin.reject();
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('initializes and cannot autologin with non-manual', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'somethingsomething'};
         autoLogin.resolve({auto: false, permissions: 'perm2'});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(false);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('errors with non-manual', function () {
-        expect(scope.csrf).toEqual('TOKEN');
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Initializing...');
+        checkStandardStartingExpectations();
         window.location = {href: 'somethingsomething'};
         autoLogin.reject();
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(false);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('pressing FB Login to success and auto-login', function () {
-        scope.fbLogin();
+        SignInCtrl.fbLogin();
         doLogin.resolve({auto: true});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(false);
-        expect(scope.showManual).toEqual(false);
-        expect(scope.message).toEqual('Logging in via Facebook');
+        expect(SignInCtrl.showFacebook).toEqual(false);
+        expect(SignInCtrl.showManual).toEqual(false);
+        expect(SignInCtrl.message).toEqual('Logging in via Facebook');
         expect(window.location).toEqual('/auth/facebook');
     });
 
     it('pressing FB Login to success but not auto-login', function () {
         window.location = {href: 'somethinglocalhostsomething'};
-        scope.fbLogin();
+        SignInCtrl.fbLogin();
         doLogin.resolve({auto: false});
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 
     it('pressing FB Login to failure', function () {
         window.location = {href: 'somethinglocalhostsomething'};
-        scope.fbLogin();
+        SignInCtrl.fbLogin();
         doLogin.reject();
         scope.$apply();
-        expect(scope.showFacebook).toEqual(true);
-        expect(scope.showManual).toEqual(true);
-        expect(scope.message).toEqual('');
+        expect(SignInCtrl.showFacebook).toEqual(true);
+        expect(SignInCtrl.showManual).toEqual(true);
+        expect(SignInCtrl.message).toEqual('');
     });
 });

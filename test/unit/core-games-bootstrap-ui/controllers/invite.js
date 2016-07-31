@@ -28,19 +28,19 @@ describe('Controller: CoreBootstrapInviteCtrl', function () {
     }));
 
     it('initializes to friends and none chosen', function () {
-        expect(scope.invitableFriends()).toEqual(invitableFriends);
-        expect(scope.chosenFriends).toEqual([]);
+        expect(InviteCtrl.invitableFriends()).toEqual(invitableFriends);
+        expect(InviteCtrl.chosenFriends).toEqual([]);
     });
 
     it('cancel closes dialog', function () {
-        scope.cancel();
+        InviteCtrl.cancel();
         expect(modalInstance.dismiss).toHaveBeenCalled();
         expect(facebookMock.inviteFriends).not.toHaveBeenCalled();
     });
 
     it('invite invites chosen friend ids', function () {
-        scope.chosenFriends = [{name: 'X', id: '1'}, {name: 'A', id: '3'}];
-        scope.invite();
+        InviteCtrl.chosenFriends = [{name: 'X', id: '1'}, {name: 'A', id: '3'}];
+        InviteCtrl.invite();
         expect(modalInstance.close).toHaveBeenCalled();
         expect(facebookMock.inviteFriends).toHaveBeenCalledWith(['1', '3'], aMessage);
     });
