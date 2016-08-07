@@ -12,12 +12,16 @@ describe('Service: jtbBootstrapGameActions', function () {
     var overrideErrorTemplate = 'views/app/myError.html';
     var overrideConfirmTemplate = 'views/app/myConfirm.html';
 
-    var $uibModal, uibModalPromise, $q, $location, gameCache, openParams;
+    var $uibModal, uibModalPromise, $q, $location, gameCache, openParams, $uibModalInstance;
     beforeEach(module(function ($provide) {
         $location = {path: jasmine.createSpy()};
         $provide.factory('$location', function () {
             return $location;
         });
+        $uibModalInstance = {
+            close: jasmine.createSpy(),
+            dismiss: jasmine.createSpy()
+        };
         uibModalPromise = undefined;
         openParams = undefined;
         $uibModal = {
@@ -67,8 +71,19 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(openParams.controller[0]).toEqual('$uibModalInstance');
         expect(openParams.controller[1]).toEqual('message');
         expect(angular.isFunction(openParams.controller[2])).toEqual(true);
-        expect(openParams.controller[2].name).toEqual('ConfirmDialogController');
         expect(openParams.resolve.message()).toEqual(confirmMessage);
+        var theThis = {};
+        openParams.controller[2].call(theThis, $uibModalInstance, confirmMessage);
+        expect(theThis.confirmMessage).toEqual(confirmMessage);
+        expect($uibModalInstance.close).not.toHaveBeenCalled();
+        expect($uibModalInstance.dismiss).not.toHaveBeenCalled();
+        theThis.takeAction();
+        expect($uibModalInstance.close).toHaveBeenCalled();
+        expect($uibModalInstance.dismiss).not.toHaveBeenCalled();
+        $uibModalInstance.close.calls.reset();
+        theThis.cancelAction();
+        expect($uibModalInstance.close).not.toHaveBeenCalled();
+        expect($uibModalInstance.dismiss).toHaveBeenCalled();
     }
 
     function testStandardConfirmDialog() {
@@ -89,6 +104,14 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(angular.isFunction(openParams.controller[2])).toEqual(true);
         expect(openParams.controller[2].name).toEqual('ErrorDialogController');
         expect(openParams.resolve.message()).toEqual(errorMessage);
+        var theThis = {};
+        openParams.controller[2].call(theThis, $uibModalInstance, errorMessage);
+        expect(theThis.errorMessage).toEqual(errorMessage);
+        expect($uibModalInstance.close).not.toHaveBeenCalled();
+        expect($uibModalInstance.dismiss).not.toHaveBeenCalled();
+        theThis.closeError();
+        expect($uibModalInstance.close).toHaveBeenCalled();
+        expect($uibModalInstance.dismiss).not.toHaveBeenCalled();
     }
 
     function testStandardErrorDialog() {
