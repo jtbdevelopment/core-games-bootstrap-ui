@@ -102,7 +102,6 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(openParams.controller[0]).toEqual('$uibModalInstance');
         expect(openParams.controller[1]).toEqual('message');
         expect(angular.isFunction(openParams.controller[2])).toEqual(true);
-        expect(openParams.controller[2].name).toEqual('ErrorDialogController');
         expect(openParams.resolve.message()).toEqual(errorMessage);
         var theThis = {};
         openParams.controller[2].call(theThis, $uibModalInstance, errorMessage);
