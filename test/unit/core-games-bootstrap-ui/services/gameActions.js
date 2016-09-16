@@ -5,7 +5,16 @@ describe('Service: jtbBootstrapGameActions', function () {
     // load the controller's module
     beforeEach(module('coreGamesBootstrapUi.services'));
 
-    var game = {id: 'theGameId', updated: 0}, updatedGame = {id: 'theGameId', updated: 1};
+    var game = {
+            id: 'theGameId',
+            updated: 0,
+            gamePhase: 'SomePhase'
+        },
+        updatedGame = {
+            id: 'theGameId',
+            updated: 1,
+            gamePhase: 'APhase'
+        };
 
     var playerBaseURL = 'http:/xx.com/y';
     var gameURL = playerBaseURL + '/game/' + game.id + '/';
@@ -63,6 +72,7 @@ describe('Service: jtbBootstrapGameActions', function () {
         $q = _$q_;
         confirmMessage = undefined;
         errorMessage = undefined;
+        updatedGame.gamePhase = 'ResetPhase';
         service = $injector.get('jtbBootstrapGameActions');
     }));
 
@@ -132,23 +142,35 @@ describe('Service: jtbBootstrapGameActions', function () {
     describe('standard functions and dialogs without errors', function () {
         var locationChange;
         beforeEach(function () {
-            locationChange = false;
+            locationChange = undefined;
         });
 
         afterEach(function () {
             $http.flush();
             expect(gameCache.putUpdatedGame).toHaveBeenCalledWith(updatedGame);
-            if (locationChange) {
-                expect($location.path).toHaveBeenCalledWith('/main');
+            if (angular.isDefined(locationChange)) {
+                expect($location.path).toHaveBeenCalledWith(locationChange);
             } else {
                 expect($location.path).not.toHaveBeenCalled();
             }
         });
 
         it('test rematch works', function () {
-            locationChange = true;
+            updatedGame.gamePhase = 'AnotherPhase';
+            locationChange = '/game/' + updatedGame.gamePhase.toLowerCase() + '/' + game.id;
             $http.expectPUT(gameURL + 'rematch').respond(updatedGame);
             service.rematch(game);
+        });
+
+        it('test new works', function () {
+            updatedGame.gamePhase = 'NewPhase';
+            locationChange = '/game/' + updatedGame.gamePhase.toLowerCase() + '/' + game.id;
+            var options = {
+                option1: true,
+                flags: [true, false]
+            };
+            $http.expectPOST(playerBaseURL + '/new', options).respond(updatedGame);
+            service.new(options);
         });
 
         it('test accept works', function () {
@@ -228,6 +250,7 @@ describe('Service: jtbBootstrapGameActions', function () {
     it('test an error using custom handler', function () {
         var handler = jasmine.createSpy();
         service.setErrorHandler(handler);
+        expect(service.getErrorHandler()).toEqual(handler);
         errorMessage = 'bad thing';
         $http.expectPUT(gameURL + 'accept').respond(401, errorMessage);
         service.accept(game);

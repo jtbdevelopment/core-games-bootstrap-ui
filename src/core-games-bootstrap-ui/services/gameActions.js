@@ -102,12 +102,15 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 //  TODO
             }
 
-            function generalizeTakeActionPromiseHandler(httpPromise) {
+            function generalizeTakeActionPromiseHandler(httpPromise, successCB) {
                 showSending();
                 httpPromise.success(
                     function (updatedGame) {
                         hideSending();
                         jtbGameCache.putUpdatedGame(updatedGame);
+                        if (angular.isDefined(successCB)) {
+                            successCB(updatedGame);
+                        }
                     }
                 ).error(
                     function (data, status) {
@@ -118,7 +121,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 );
             }
 
-            function generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB) {
+            function generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB, successCB) {
                 var params = {
                     controller: ['$uibModalInstance', 'message', ConfirmDialogController],
                     controllerAs: 'confirmDialog',
@@ -134,7 +137,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                     params.template = defaultConfirmDialog;
                 }
                 $uibModal.open(params).result.then(function () {
-                        generalizeTakeActionPromiseHandler(httpActionCB());
+                        generalizeTakeActionPromiseHandler(httpActionCB(), successCB);
                     }
                 );
             }
@@ -146,6 +149,10 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
 
             return {
                 //  Override error handler
+                getErrorHandler: function () {
+                    return errorHandler;
+                },
+
                 setErrorHandler: function (cb) {
                     errorHandler = cb;
                 },
@@ -162,14 +169,22 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 getGameURL: function (game) {
                     return gameURL(game);
                 },
-                wrapActionOnGame: function (httpActionCB) {
-                    generalizeTakeActionPromiseHandler(httpActionCB);
+                wrapActionOnGame: function (httpActionCB, successCB) {
+                    generalizeTakeActionPromiseHandler(httpActionCB, successCB);
                 },
-                wrapConfirmedActionOnGame: function (confirmMessage, httpActionCB) {
-                    generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB);
+                wrapConfirmedActionOnGame: function (confirmMessage, httpActionCB, successCB) {
+                    generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB, successCB);
                 },
 
                 //  Standard actions
+                new: function (options) {
+                    this.wrapActionOnGame(
+                        $http.post(jtbPlayerService.currentPlayerBaseURL() + '/new', options),
+                        function (game) {
+                            $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
+                        });
+                },
+
                 accept: function (game) {
                     this.wrapActionOnGame(standardHttpAction(game, 'accept'));
                 },
@@ -187,8 +202,9 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 },
 
                 rematch: function (game) {
-                    this.wrapActionOnGame(standardHttpAction(game, 'rematch'));
-                    $location.path('/main');
+                    this.wrapActionOnGame(standardHttpAction(game, 'rematch'), function (game) {
+                        $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
+                    });
                 },
 
                 quit: function (game) {
