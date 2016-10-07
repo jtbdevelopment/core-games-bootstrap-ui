@@ -40,9 +40,6 @@ angular.module('coreGamesBootstrapUi.controllers')
             jtbFacebook.canAutoSignIn().then(function (details) {
                 if (!details.auto) {
                     showLoginOptions();
-                    if(controller.showFacebook && !controller.showManual) {
-                        controller.fbLogin();
-                    }
                 } else {
                     autoLogin();
                 }

@@ -97,17 +97,14 @@ describe('Controller: CoreBootstrapSignInCtrl', function () {
         expect(SignInCtrl.message).toEqual('');
     });
 
-    it('initializes and cannot autologin with non-manual, so initiates fb login', function () {
+    it('initializes and cannot autologin with non-manual', function () {
         checkStandardStartingExpectations();
         window.location = {href: 'somethingsomething'};
-        angular.isUndefined(doLogin);
         autoLogin.resolve({auto: false, permissions: 'perm2'});
         scope.$apply();
         expect(SignInCtrl.showFacebook).toEqual(true);
         expect(SignInCtrl.showManual).toEqual(false);
         expect(SignInCtrl.message).toEqual('');
-        angular.isDefined(doLogin);
-        //  rest tested elsewhere
     });
 
     it('errors with non-manual', function () {
