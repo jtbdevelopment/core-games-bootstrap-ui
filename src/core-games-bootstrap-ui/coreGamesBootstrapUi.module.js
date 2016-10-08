@@ -11,6 +11,7 @@
         });
 
     // Modules
+    angular.module('coreGamesBootstrapUi.templates', []);
     angular.module('coreGamesBootstrapUi.controllers', []);
     angular.module('coreGamesBootstrapUi.directives', []);
     angular.module('coreGamesBootstrapUi.filters', []);
@@ -21,6 +22,7 @@
             'coreGamesBootstrapUi.directives',
             'coreGamesBootstrapUi.filters',
             'coreGamesBootstrapUi.services',
+            'coreGamesBootstrapUi.templates',
             'coreGamesBootstrapUi.controllers',
             'ngResource',
             'ngCookies',
