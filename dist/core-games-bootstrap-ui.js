@@ -392,7 +392,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</table> ' +
         '</div> ' +
         '</div>');
-    $templateCache.put('views/core-bs/admin/admin-switchplayer.html', '' +
+    $templateCache.put('views/core-bs/admin/admin-switch-player.html', '' +
         '<div class="admin-user">' +
         '<div class="row">' +
         '<div class="col-xs-4">' +
@@ -439,6 +439,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</div>' +
         '</div>'
     );
+    console.log('running');
     $templateCache.put('views/core-bs/admin/admin.html', '' +
         '<div class="admin-screen">' +
         '<div class="row"><div class="col-xs-8 col-xs-offset-2">' +
@@ -446,14 +447,14 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '<uib-tab heading="Stats">' +
         '<div ng-include="\'views/core-bs/admin/admin-stats.html\'"></div>' +
         '</uib-tab><uib-tab heading="Switch player">' +
-        '<div ng-include="\'views/core-bs/admin/admin-switchplayer.html\'">' +
+        '<div ng-include="\'views/core-bs/admin/admin-switch-player.html\'">' +
         '</div>' +
         '</uib-tab></uib-tabset></div></div></div>');
 });
 'use strict';
 
 angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
-    $templateCache.put('views/core-bs/signin/sign-in.html', '' +
+    $templateCache.put('views/core-bs/sign-in/sign-in.html', '' +
         '<div class="sign-in ng-cloak">' +
         '<div class="container-fluid">' +
         '<div class="row text-center">' +
@@ -497,7 +498,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</div>' +
         '</div>'
     );
-    $templateCache.put('views/core-bs/signin/signed-in.html', '' +
+    $templateCache.put('views/core-bs/sign-in/signed-in.html', '' +
         '<div class="row signed-in">' +
         '<div class="row text-center">' +
         '<div class="center">' +

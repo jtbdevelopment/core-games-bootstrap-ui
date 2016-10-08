@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
-    $templateCache.put('views/core-bs/signin/sign-in.html', '' +
+    $templateCache.put('views/core-bs/sign-in/sign-in.html', '' +
         '<div class="sign-in ng-cloak">' +
         '<div class="container-fluid">' +
         '<div class="row text-center">' +
@@ -45,7 +45,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</div>' +
         '</div>'
     );
-    $templateCache.put('views/core-bs/signin/signed-in.html', '' +
+    $templateCache.put('views/core-bs/sign-in/signed-in.html', '' +
         '<div class="row signed-in">' +
         '<div class="row text-center">' +
         '<div class="center">' +

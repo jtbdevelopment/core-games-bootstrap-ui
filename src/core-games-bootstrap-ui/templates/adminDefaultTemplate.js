@@ -39,7 +39,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</table> ' +
         '</div> ' +
         '</div>');
-    $templateCache.put('views/core-bs/admin/admin-switchplayer.html', '' +
+    $templateCache.put('views/core-bs/admin/admin-switch-player.html', '' +
         '<div class="admin-user">' +
         '<div class="row">' +
         '<div class="col-xs-4">' +
@@ -86,6 +86,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '</div>' +
         '</div>'
     );
+    console.log('running');
     $templateCache.put('views/core-bs/admin/admin.html', '' +
         '<div class="admin-screen">' +
         '<div class="row"><div class="col-xs-8 col-xs-offset-2">' +
@@ -93,7 +94,7 @@ angular.module('coreGamesBootstrapUi.templates').run(function ($templateCache) {
         '<uib-tab heading="Stats">' +
         '<div ng-include="\'views/core-bs/admin/admin-stats.html\'"></div>' +
         '</uib-tab><uib-tab heading="Switch player">' +
-        '<div ng-include="\'views/core-bs/admin/admin-switchplayer.html\'">' +
+        '<div ng-include="\'views/core-bs/admin/admin-switch-player.html\'">' +
         '</div>' +
         '</uib-tab></uib-tabset></div></div></div>');
 });

@@ -25,6 +25,9 @@ describe('', function () {
         expect(hasModule('coreGamesBootstrapUi.controllers')).toBeTruthy();
     });
 
+    it('should load controllers module', function () {
+        expect(hasModule('coreGamesBootstrapUi.templates')).toBeTruthy();
+    });
 
     it('should load filters module', function () {
         expect(hasModule('coreGamesBootstrapUi.filters')).toBeTruthy();
