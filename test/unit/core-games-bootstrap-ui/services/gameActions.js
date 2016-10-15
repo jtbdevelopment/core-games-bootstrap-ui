@@ -2,7 +2,6 @@
 
 describe('Service: jtbBootstrapGameActions', function () {
 
-    // load the controller's module
     beforeEach(module('coreGamesBootstrapUi.services'));
 
     var game = {

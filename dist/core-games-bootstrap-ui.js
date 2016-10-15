@@ -398,6 +398,52 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
 
 'use strict';
 
+angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapVersionNotesService',
+    ['$uibModal', 'jtbPlayerService',
+        function ($uibModal, jtbPlayerService) {
+            function VersionDialogController($uibModalInstance, currentVersion, releaseNotes) {
+                var controller = this;
+                controller.currentVersion = currentVersion;
+                controller.releaseNotes = releaseNotes;
+                controller.close = function () {
+                    $uibModalInstance.close();
+                };
+            }
+
+            return {
+                displayVersionNotesIfAppropriate: function (currentVersion, releaseNotes, modalTemplate) {
+                    if (angular.isUndefined(modalTemplate)) {
+                        modalTemplate = 'views/core-bs/version-notes/version-notes.html';
+                    }
+
+                    if (jtbPlayerService.currentPlayer().lastVersionNotes < currentVersion) {
+                        var params = {
+                            controller: [
+                                '$uibModalInstance',
+                                'currentVersion',
+                                'releaseNotes',
+                                VersionDialogController],
+                            controllerAs: 'versionDialog',
+                            templateUrl: modalTemplate,
+                            resolve: {
+                                currentVersion: function () {
+                                    return currentVersion;
+                                },
+                                releaseNotes: function () {
+                                    return releaseNotes;
+                                }
+                            }
+                        };
+                        $uibModal.open(params);
+                        jtbPlayerService.updateLastVersionNotes(currentVersion);
+                    }
+                }
+            };
+        }
+    ]
+);
+'use strict';
+
 angular.module('coreGamesBootstrapUi.templates').run(
     ['$templateCache',
         function ($templateCache) {
@@ -582,6 +628,28 @@ angular.module('coreGamesBootstrapUi.templates').run(
                 '<div class="center">' +
                 '<p>Login successful...</p>' +
                 '</div>' +
+                '</div>' +
+                '</div>'
+            );
+        }
+    ]
+);
+'use strict';
+
+angular.module('coreGamesBootstrapUi.templates').run(
+    ['$templateCache',
+        function ($templateCache) {
+            $templateCache.put('views/core-bs/version-notes/version-notes.html', '' +
+                '<div class="version-dialog">' +
+                '<div class="modal-header">' +
+                '<h3 class="modal-title">Welcome to version {{versionDialog.currentVersion}}</h3>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                '<span class="version-message">{{versionDialog.releaseNotes}}</span>' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<button class="btn btn-default btn-info btn-default-focus close-button" ' +
+                'ng-click="versionDialog.close()">OK</button>' +
                 '</div>' +
                 '</div>'
             );
