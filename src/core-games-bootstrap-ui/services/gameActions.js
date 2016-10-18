@@ -104,19 +104,19 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
 
             function generalizeTakeActionPromiseHandler(httpPromise, successCB) {
                 showSending();
-                httpPromise.success(
-                    function (updatedGame) {
+                httpPromise.then(
+                    function (response) {
+                        var updatedGame = response.data;
                         hideSending();
                         jtbGameCache.putUpdatedGame(updatedGame);
                         if (angular.isDefined(successCB)) {
                             successCB(updatedGame);
                         }
-                    }
-                ).error(
-                    function (data, status) {
-                        console.error(data + '/' + status);
+                    },
+                    function (response) {
+                        console.error(response.data + '/' + response.status);
                         hideSending();
-                        errorHandler(data);
+                        errorHandler(response.data);
                     }
                 );
             }
