@@ -194,8 +194,8 @@ angular.module('coreGamesBootstrapUi.services').run(
  * cache interaction and error handling
  */
 angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions',
-    ['$http', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService',
-        function ($http, $location, $uibModal, jtbGameCache, jtbPlayerService) {
+    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService',
+        function ($http, $q, $location, $uibModal, jtbGameCache, jtbPlayerService) {
 
             function ErrorDialogController($uibModalInstance, message) {
                 var controller = this;
@@ -279,26 +279,28 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 //  TODO
             }
 
-            function generalizeTakeActionPromiseHandler(httpPromise, successCB) {
+            function generalizeTakeActionPromiseHandler(httpPromise) {
+                var promise = $q.defer();
                 showSending();
                 httpPromise.then(
                     function (response) {
                         var updatedGame = response.data;
                         hideSending();
                         jtbGameCache.putUpdatedGame(updatedGame);
-                        if (angular.isDefined(successCB)) {
-                            successCB(updatedGame);
-                        }
+                        promise.resolve(updatedGame);
                     },
                     function (response) {
                         console.error(response.data + '/' + response.status);
                         hideSending();
                         errorHandler(response.data);
+                        promise.reject();
                     }
                 );
+                return promise.promise;
             }
 
             function generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB, successCB) {
+                var promise = $q.defer();
                 var params = {
                     controller: ['$uibModalInstance', 'message', ConfirmDialogController],
                     controllerAs: 'confirmDialog',
@@ -314,9 +316,17 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                     params.template = defaultConfirmDialog;
                 }
                 $uibModal.open(params).result.then(function () {
-                        generalizeTakeActionPromiseHandler(httpActionCB(), successCB);
+                        generalizeTakeActionPromiseHandler(httpActionCB()).then(function (updatedGame) {
+                            promise.resolve(updatedGame);
+                        }, function () {
+                            promise.reject();
+                        });
+                    },
+                    function () {
+                        promise.reject();
                     }
                 );
+                return promise.promise;
             }
 
 
@@ -346,20 +356,20 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 getGameURL: function (game) {
                     return gameURL(game);
                 },
-                wrapActionOnGame: function (httpActionCB, successCB) {
-                    generalizeTakeActionPromiseHandler(httpActionCB, successCB);
+                wrapActionOnGame: function (httpActionCB) {
+                    return generalizeTakeActionPromiseHandler(httpActionCB);
                 },
-                wrapConfirmedActionOnGame: function (confirmMessage, httpActionCB, successCB) {
-                    generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB, successCB);
+                wrapConfirmedActionOnGame: function (confirmMessage, httpActionCB) {
+                    return generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB);
                 },
 
                 //  Standard actions
                 new: function (options) {
-                    this.wrapActionOnGame(
-                        $http.post(jtbPlayerService.currentPlayerBaseURL() + '/new', options),
+                    this.wrapActionOnGame($http.post(jtbPlayerService.currentPlayerBaseURL() + '/new', options)).then(
                         function (game) {
                             $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
-                        });
+                        }
+                    );
                 },
 
                 accept: function (game) {
@@ -379,7 +389,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 },
 
                 rematch: function (game) {
-                    this.wrapActionOnGame(standardHttpAction(game, 'rematch'), function (game) {
+                    this.wrapActionOnGame(standardHttpAction(game, 'rematch')).then(function (game) {
                         $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
                     });
                 },

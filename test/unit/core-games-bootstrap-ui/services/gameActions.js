@@ -265,5 +265,85 @@ describe('Service: jtbBootstrapGameActions', function () {
         uibModalPromise.reject();
     });
 
+    describe('test custom action promises', function () {
+        var http, $rootScope;
+        beforeEach(inject(function ($http, _$rootScope_) {
+            http = $http;
+            $rootScope = _$rootScope_;
+        }));
+
+        it('function wrap action with success', function () {
+            var url = 'something';
+            var response = {id: 'id'};
+            $http.expectPUT(url).respond(response);
+            var success = false;
+            service.wrapActionOnGame(http.put(url)).then(function (update) {
+                expect(update).toEqual(response);
+                success = true;
+            });
+            $http.flush();
+            expect(success).toBeTruthy();
+        });
+
+        it('function wrap action with failure', function () {
+            var url = 'something';
+            $http.expectPUT(url).respond(401);
+            var failure = false;
+            service.wrapActionOnGame(http.put(url)).then(function () {
+            }, function () {
+                failure = true;
+            });
+            $http.flush();
+            expect(failure).toBeTruthy();
+        });
+
+        it('function wrap confirmable with accept and success', function () {
+            var url = 'something';
+            var response = {id: 'id'};
+            $http.expectPUT(url).respond(response);
+            var success = false;
+            service.wrapConfirmedActionOnGame('test', function () {
+                return http.put(url)
+            }).then(function (update) {
+                expect(update).toEqual(response);
+                success = true;
+            });
+            uibModalPromise.resolve();
+            $http.flush();
+            expect(success).toBeTruthy();
+        });
+
+        it('function wrap confirmable with accept and http failure', function () {
+            var url = 'something';
+            $http.expectPUT(url).respond(401);
+            var failure = false;
+            service.wrapConfirmedActionOnGame('test', function () {
+                return http.put(url)
+            }).then(
+                function () {
+                },
+                function () {
+                    failure = true;
+                });
+            uibModalPromise.resolve();
+            $http.flush();
+            expect(failure).toBeTruthy();
+        });
+
+        it('function wrap confirmable with reject of confirm to fail', function () {
+            var failure = false;
+            service.wrapConfirmedActionOnGame('test', function () {
+                return http.put(url)
+            }).then(
+                function () {
+                },
+                function () {
+                    failure = true;
+                });
+            uibModalPromise.reject();
+            $rootScope.$apply();
+            expect(failure).toBeTruthy();
+        });
+    });
 });
 
