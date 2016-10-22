@@ -88,7 +88,6 @@ angular.module('coreGamesBootstrapUi.templates').run(
                 '</div>' +
                 '</div>'
             );
-            console.log('running');
             $templateCache.put('views/core-bs/admin/admin.html', '' +
                 '<div class="admin-screen">' +
                 '<div class="row"><div class="col-xs-8 col-xs-offset-2">' +
