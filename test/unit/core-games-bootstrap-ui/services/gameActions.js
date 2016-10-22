@@ -21,8 +21,18 @@ describe('Service: jtbBootstrapGameActions', function () {
     var overrideConfirmTemplate = 'views/app/myConfirm.html';
 
     var $uibModal, uibModalPromise, $q, $location, gameCache, openParams, $uibModalInstance;
+    var adPromise, adHandler = {
+        showAdPopup: function() {
+            adPromise = $q.defer();
+            return adPromise.promise;
+        }
+    };
     beforeEach(module(function ($provide) {
         $location = {path: jasmine.createSpy()};
+        adPromise = undefined;
+        $provide.factory('jtbBootstrapAds', function () {
+            return adHandler;
+        });
         $provide.factory('$location', function () {
             return $location;
         });
@@ -159,6 +169,21 @@ describe('Service: jtbBootstrapGameActions', function () {
             locationChange = '/game/' + updatedGame.gamePhase.toLowerCase() + '/' + game.id;
             $http.expectPUT(gameURL + 'rematch').respond(updatedGame);
             service.rematch(game);
+            expect(adPromise).toBeDefined();
+            adPromise.resolve();
+        });
+
+        it('test rematch works custom adHandler', function () {
+            updatedGame.gamePhase = 'AnotherPhase';
+            locationChange = '/game/' + updatedGame.gamePhase.toLowerCase() + '/' + game.id;
+            $http.expectPUT(gameURL + 'rematch').respond(updatedGame);
+            var p = $q.defer();
+            service.rematch(game, function() {
+                console.log('her');
+                return p.promise;
+            });
+            expect(adPromise).toBeUndefined();
+            p.resolve();
         });
 
         it('test new works', function () {
@@ -170,11 +195,43 @@ describe('Service: jtbBootstrapGameActions', function () {
             };
             $http.expectPOST(playerBaseURL + '/new', options).respond(updatedGame);
             service.new(options);
+            expect(adPromise).toBeDefined();
+            adPromise.resolve();
+        });
+
+        it('test new works with custom ad', function () {
+            updatedGame.gamePhase = 'NewPhase';
+            locationChange = '/game/' + updatedGame.gamePhase.toLowerCase() + '/' + game.id;
+            var options = {
+                option1: true,
+                flags: [true, false]
+            };
+            $http.expectPOST(playerBaseURL + '/new', options).respond(updatedGame);
+            var p = $q.defer();
+            service.new(options, function() {
+                console.log('her');
+                return p.promise;
+            });
+            expect(adPromise).toBeUndefined();
+            p.resolve();
         });
 
         it('test accept works', function () {
             $http.expectPUT(gameURL + 'accept').respond(updatedGame);
             service.accept(game);
+            expect(adPromise).toBeDefined();
+            adPromise.resolve();
+        });
+
+        it('test accept works with custom ad handler', function () {
+            $http.expectPUT(gameURL + 'accept').respond(updatedGame);
+            var p = $q.defer();
+            service.accept(game, function() {
+                console.log('her');
+                return p.promise;
+            });
+            expect(adPromise).toBeUndefined();
+            p.resolve();
         });
 
         describe('with positive confirm using standard confirm dialog', function () {
@@ -233,6 +290,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         errorMessage = 'bad thing';
         $http.expectPUT(gameURL + 'accept').respond(401, errorMessage);
         service.accept(game);
+        expect(adPromise).toBeDefined();
+        adPromise.resolve();
         $http.flush();
         testStandardErrorDialog();
     });
@@ -242,6 +301,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         errorMessage = 'bad thing';
         $http.expectPUT(gameURL + 'accept').respond(401, errorMessage);
         service.accept(game);
+        expect(adPromise).toBeDefined();
+        adPromise.resolve();
         $http.flush();
         testCustomErrorDialog();
     });
@@ -253,6 +314,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         errorMessage = 'bad thing';
         $http.expectPUT(gameURL + 'accept').respond(401, errorMessage);
         service.accept(game);
+        expect(adPromise).toBeDefined();
+        adPromise.resolve();
         $http.flush();
         expect(handler).toHaveBeenCalledWith(errorMessage);
     });

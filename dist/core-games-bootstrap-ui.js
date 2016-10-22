@@ -228,8 +228,8 @@ angular.module('coreGamesBootstrapUi.services').run(
  * cache interaction and error handling
  */
 angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions',
-    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService',
-        function ($http, $q, $location, $uibModal, jtbGameCache, jtbPlayerService) {
+    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService', 'jtbBootstrapAds',
+        function ($http, $q, $location, $uibModal, jtbGameCache, jtbPlayerService, jtbBootstrapAds) {
 
             function ErrorDialogController($uibModalInstance, message) {
                 var controller = this;
@@ -300,6 +300,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
             }
 
             var errorHandler = defaultErrorCallback;
+            var defaultAdHandler = jtbBootstrapAds.showAdPopup;
 
             function gameURL(game) {
                 return jtbPlayerService.currentPlayerBaseURL() + '/game/' + game.id + '/';
@@ -368,7 +369,14 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 return $http.put(gameURL(game) + action);
             }
 
-            return {
+            function generateAd(adHandler) {
+                if (angular.isUndefined(adHandler)) {
+                    adHandler = defaultAdHandler;
+                }
+                return adHandler();
+            }
+
+            var service = {
                 //  Override error handler
                 getErrorHandler: function () {
                     return errorHandler;
@@ -398,42 +406,55 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 },
 
                 //  Standard actions
-                new: function (options) {
-                    this.wrapActionOnGame($http.post(jtbPlayerService.currentPlayerBaseURL() + '/new', options)).then(
-                        function (game) {
-                            $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
-                        }
-                    );
+
+                //  adHandler will default if undefined
+                new: function (options, adHandler) {
+                    generateAd(adHandler).then(function () {
+                        service.wrapActionOnGame($http.post(
+                            jtbPlayerService.currentPlayerBaseURL() + '/new',
+                            options)).then(
+                            function (game) {
+                                $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
+                            }
+                        );
+                    });
                 },
 
-                accept: function (game) {
-                    this.wrapActionOnGame(standardHttpAction(game, 'accept'));
+                //  adHandler will default if undefined
+                accept: function (game, adHandler) {
+                    generateAd(adHandler).then(function () {
+                        service.wrapActionOnGame(standardHttpAction(game, 'accept'));
+                    });
                 },
 
                 reject: function (game) {
-                    this.wrapConfirmedActionOnGame('Reject this game!', function () {
+                    service.wrapConfirmedActionOnGame('Reject this game!', function () {
                         return standardHttpAction(game, 'reject');
                     });
                 },
 
                 declineRematch: function (game) {
-                    this.wrapConfirmedActionOnGame('Decline further rematches.', function () {
+                    service.wrapConfirmedActionOnGame('Decline further rematches.', function () {
                         return standardHttpAction(game, 'endRematch');
                     });
                 },
 
-                rematch: function (game) {
-                    this.wrapActionOnGame(standardHttpAction(game, 'rematch')).then(function (game) {
-                        $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
+                //  adHandler will default if undefined
+                rematch: function (game, adHandler) {
+                    generateAd(adHandler).then(function () {
+                        service.wrapActionOnGame(standardHttpAction(game, 'rematch')).then(function (game) {
+                            $location.path('/game/' + game.gamePhase.toLowerCase() + '/' + game.id);
+                        });
                     });
                 },
 
                 quit: function (game) {
-                    this.wrapConfirmedActionOnGame('Quit this game!', function () {
+                    service.wrapConfirmedActionOnGame('Quit this game!', function () {
                         return standardHttpAction(game, 'quit');
                     });
                 }
             };
+            return service;
         }
     ]
 );
