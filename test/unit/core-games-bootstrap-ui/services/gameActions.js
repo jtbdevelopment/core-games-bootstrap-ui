@@ -189,7 +189,6 @@ describe('Service: jtbBootstrapGameActions', function () {
             $http.expectPUT(gameURL + 'rematch').respond(updatedGame);
             var p = $q.defer();
             service.rematch(game, function() {
-                console.log('her');
                 return p.promise;
             });
             expect(adPromise).toBeUndefined();
@@ -219,7 +218,6 @@ describe('Service: jtbBootstrapGameActions', function () {
             $http.expectPOST(playerBaseURL + '/new', options).respond(updatedGame);
             var p = $q.defer();
             service.new(options, function() {
-                console.log('her');
                 return p.promise;
             });
             expect(adPromise).toBeUndefined();
@@ -237,7 +235,6 @@ describe('Service: jtbBootstrapGameActions', function () {
             $http.expectPUT(gameURL + 'accept').respond(updatedGame);
             var p = $q.defer();
             service.accept(game, function() {
-                console.log('her');
                 return p.promise;
             });
             expect(adPromise).toBeUndefined();
