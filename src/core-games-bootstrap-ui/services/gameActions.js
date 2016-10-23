@@ -17,8 +17,10 @@
  * cache interaction and error handling
  */
 angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions',
-    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService', 'jtbBootstrapAds',
-        function ($http, $q, $location, $uibModal, jtbGameCache, jtbPlayerService, jtbBootstrapAds) {
+    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache',
+        'jtbPlayerService', 'jtbBootstrapAds', 'jtbBootstrapBackdropManager',
+        function ($http, $q, $location, $uibModal, jtbGameCache,
+                  jtbPlayerService, jtbBootstrapAds, jtbBootstrapBackdropManager) {
 
             function ErrorDialogController($uibModalInstance, message) {
                 var controller = this;
@@ -96,11 +98,11 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
             }
 
             function showSending() {
-                //  TODO
+                jtbBootstrapBackdropManager.addBackdrop();
             }
 
             function hideSending() {
-                //  TODO
+                jtbBootstrapBackdropManager.removeBackdrop();
             }
 
             function generalizeTakeActionPromiseHandler(httpPromise) {

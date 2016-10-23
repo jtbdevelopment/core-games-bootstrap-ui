@@ -134,8 +134,8 @@ angular.module('coreGamesBootstrapUi.controllers')
 'use strict';
 
 angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapAds',
-    ['$q',
-        function ($q) {
+    ['$q', 'jtbBootstrapBackdropManager',
+        function ($q, jtbBootstrapBackdropManager) {
             var DEFAULT_TIME_BETWEEN_ADS = 2 * 60 * 1000;  // 2 minutes
             var timeBetweenAds = DEFAULT_TIME_BETWEEN_ADS;
             var lastAd = new Date(0);
@@ -147,11 +147,14 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapAds',
                     var adPromise = $q.defer();
                     if (((new Date()) - lastAd ) >= timeBetweenAds) {
                         try {
+                            jtbBootstrapBackdropManager.addBackdrop();
                             invokeApplixirVideoUnitExtended(false, 'middle', function () {
+                                jtbBootstrapBackdropManager.removeBackdrop();
                                 adPromise.resolve();
                                 lastAd = new Date();
                             });
                         } catch (ex) {
+                            jtbBootstrapBackdropManager.removeBackdrop();
                             console.log(JSON.stringify(ex));
                             adPromise.resolve();
                         }
@@ -164,6 +167,61 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapAds',
         }
     ]);
 
+'use strict';
+
+//  Largely adapted from https://github.com/angular-ui/bootstrap/blob/master/src/modal/modal.js
+//  But to not actually require a modal window
+angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapBackdropManager',
+    ['$animate', '$document',  '$compile', '$rootScope',
+        function ($animate, $document, $compile, $rootScope) {
+            var counter = 0;
+            var BODY_CLASS = '.modal-open';
+            var backdropDomEl;
+            var backdropScope = $rootScope.$new(true);
+
+            function setupBackdrop() {
+                var body = $document.find('body').eq(0);
+
+                backdropDomEl = angular.element('<div uib-modal-backdrop="modal-backdrop"></div>');
+                backdropDomEl.attr({
+                    'class': 'modal-backdrop',
+                    'ng-style': '{\'z-index\': 1040}',
+                    'uib-modal-animation-class': 'fade',
+                    'modal-in-class': 'in'
+                });
+                backdropDomEl.attr('modal-animation', 'true');
+                body.addClass(BODY_CLASS);
+                $compile(backdropDomEl)(backdropScope);
+                $animate.enter(backdropDomEl, body);
+            }
+
+            function removeBackdrop() {
+                var body = $document.find('body').eq(0);
+                $animate.leave(backdropDomEl).then(function() {
+                    backdropDomEl.remove();
+                    body.removeClass(BODY_CLASS);
+                    backdropDomEl = undefined;
+                });
+            }
+
+            return {
+                addBackdrop: function () {
+                    counter += 1;
+                    if (counter === 1) {
+                        setupBackdrop();
+                    }
+                },
+                removeBackdrop: function () {
+                    counter -= 1;
+                    if (counter === 0) {
+                        removeBackdrop();
+                    }
+                }
+
+            };
+        }
+    ]
+);
 'use strict';
 
 angular.module('coreGamesBootstrapUi.services').run(
@@ -228,8 +286,10 @@ angular.module('coreGamesBootstrapUi.services').run(
  * cache interaction and error handling
  */
 angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions',
-    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache', 'jtbPlayerService', 'jtbBootstrapAds',
-        function ($http, $q, $location, $uibModal, jtbGameCache, jtbPlayerService, jtbBootstrapAds) {
+    ['$http', '$q', '$location', '$uibModal', 'jtbGameCache',
+        'jtbPlayerService', 'jtbBootstrapAds', 'jtbBootstrapBackdropManager',
+        function ($http, $q, $location, $uibModal, jtbGameCache,
+                  jtbPlayerService, jtbBootstrapAds, jtbBootstrapBackdropManager) {
 
             function ErrorDialogController($uibModalInstance, message) {
                 var controller = this;
@@ -307,11 +367,11 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
             }
 
             function showSending() {
-                //  TODO
+                jtbBootstrapBackdropManager.addBackdrop();
             }
 
             function hideSending() {
-                //  TODO
+                jtbBootstrapBackdropManager.removeBackdrop();
             }
 
             function generalizeTakeActionPromiseHandler(httpPromise) {

@@ -8,11 +8,19 @@ describe('Service: jtbBootstrapAds', function () {
 
     //  necessary because of service runs
     var $uibModal;
+    var backdropManager;
     beforeEach(module(function ($provide) {
         $uibModal = {
         };
         $provide.factory('$uibModal', function () {
             return $uibModal;
+        });
+        backdropManager = {
+            addBackdrop: jasmine.createSpy('addBackdrop'),
+            removeBackdrop: jasmine.createSpy('removeBackdrop')
+        };
+        $provide.factory('jtbBootstrapBackdropManager', function() {
+            return backdropManager;
         });
     }));
 
@@ -35,8 +43,10 @@ describe('Service: jtbBootstrapAds', function () {
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
         appCB();
         $rootScope.$apply();
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         expect(promiseResolved).toEqual(true);
     });
 
@@ -45,15 +55,21 @@ describe('Service: jtbBootstrapAds', function () {
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
         appCB();
         $rootScope.$apply();
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         expect(promiseResolved).toEqual(true);
 
+        backdropManager.removeBackdrop.calls.reset();
+        backdropManager.addBackdrop.calls.reset();
         promiseResolved = false;
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
         $rootScope.$apply();
+        expect(backdropManager.addBackdrop).not.toHaveBeenCalled();
+        expect(backdropManager.removeBackdrop).not.toHaveBeenCalled();
         expect(promiseResolved).toEqual(true);
         expect(adCalls).toEqual(1);
     });
@@ -64,18 +80,24 @@ describe('Service: jtbBootstrapAds', function () {
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
         appCB();
         $rootScope.$apply();
         expect(promiseResolved).toEqual(true);
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
 
+        backdropManager.removeBackdrop.calls.reset();
+        backdropManager.addBackdrop.calls.reset();
         promiseResolved = false;
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
         appCB();
         $rootScope.$apply();
         expect(promiseResolved).toEqual(true);
         expect(adCalls).toEqual(2);
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
     });
 
     it('passes on ad if exception throw', function () {
@@ -88,7 +110,9 @@ describe('Service: jtbBootstrapAds', function () {
         service.showAdPopup().then(function () {
             promiseResolved = true;
         });
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
         $rootScope.$apply();
         expect(promiseResolved).toEqual(true);
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
     });
 });

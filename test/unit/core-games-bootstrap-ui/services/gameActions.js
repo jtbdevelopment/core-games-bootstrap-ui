@@ -21,6 +21,7 @@ describe('Service: jtbBootstrapGameActions', function () {
     var overrideConfirmTemplate = 'views/app/myConfirm.html';
 
     var $uibModal, uibModalPromise, $q, $location, gameCache, openParams, $uibModalInstance;
+    var backdropManager;
     var adPromise, adHandler = {
         showAdPopup: function() {
             adPromise = $q.defer();
@@ -28,6 +29,13 @@ describe('Service: jtbBootstrapGameActions', function () {
         }
     };
     beforeEach(module(function ($provide) {
+        backdropManager = {
+            addBackdrop: jasmine.createSpy('addBackdrop'),
+            removeBackdrop: jasmine.createSpy('removeBackdrop')
+        };
+        $provide.factory('jtbBootstrapBackdropManager', function() {
+            return backdropManager;
+        });
         $location = {path: jasmine.createSpy()};
         adPromise = undefined;
         $provide.factory('jtbBootstrapAds', function () {
@@ -162,6 +170,8 @@ describe('Service: jtbBootstrapGameActions', function () {
             } else {
                 expect($location.path).not.toHaveBeenCalled();
             }
+            expect(backdropManager.addBackdrop).toHaveBeenCalled();
+            expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         });
 
         it('test rematch works', function () {
@@ -265,6 +275,8 @@ describe('Service: jtbBootstrapGameActions', function () {
     describe('standard confirmable actions with negative confirm using standard confirm dialog', function () {
         afterEach(function () {
             uibModalPromise.reject();
+            expect(backdropManager.addBackdrop).not.toHaveBeenCalled();
+            expect(backdropManager.removeBackdrop).not.toHaveBeenCalled();
         });
 
         it('test quit not sent on', function () {
@@ -293,6 +305,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(adPromise).toBeDefined();
         adPromise.resolve();
         $http.flush();
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         testStandardErrorDialog();
     });
 
@@ -304,6 +318,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(adPromise).toBeDefined();
         adPromise.resolve();
         $http.flush();
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         testCustomErrorDialog();
     });
 
@@ -317,6 +333,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         expect(adPromise).toBeDefined();
         adPromise.resolve();
         $http.flush();
+        expect(backdropManager.addBackdrop).toHaveBeenCalled();
+        expect(backdropManager.removeBackdrop).toHaveBeenCalled();
         expect(handler).toHaveBeenCalledWith(errorMessage);
     });
 
@@ -326,6 +344,8 @@ describe('Service: jtbBootstrapGameActions', function () {
         service.quit(game);
         testCustomConfirmDialog();
         uibModalPromise.reject();
+        expect(backdropManager.addBackdrop).not.toHaveBeenCalled();
+        expect(backdropManager.removeBackdrop).not.toHaveBeenCalled();
     });
 
     describe('test custom action promises', function () {
