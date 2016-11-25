@@ -9,14 +9,14 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapBackdropMan
             var BODY_CLASS = 'modal-open';
             var backdropDomEl;
             var backdropScope = $rootScope.$new(true);
+            backdropScope.index = 1;
 
             function setupBackdrop() {
                 var body = $document.find('body').eq(0);
-
                 backdropDomEl = angular.element('<div id="jtb-backdrop" uib-modal-backdrop="modal-backdrop"></div>');
                 backdropDomEl.attr({
                     'class': 'modal-backdrop',
-                    'ng-style': '{\'z-index\': 1040}',
+                    'ng-style': '{\'z-index\': 1040 + (index && 1 || 0) + index*10}',
                     'uib-modal-animation-class': 'fade',
                     'modal-in-class': 'in'
                 });
