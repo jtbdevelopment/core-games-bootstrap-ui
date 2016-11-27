@@ -198,7 +198,6 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapBackdropMan
             function removeBackdrop() {
                 var body = $document.find('body').eq(0);
                 $animate.leave(backdropDomEl).then(function() {
-                    backdropDomEl.remove();
                     body.removeClass(BODY_CLASS);
                     backdropDomEl = undefined;
                 });
