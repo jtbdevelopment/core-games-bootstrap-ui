@@ -181,6 +181,9 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapBackdropMan
             backdropScope.index = 1;
 
             function setupBackdrop() {
+                if(angular.isDefined(backdropDomEl)) {
+                    return;
+                }
                 var body = $document.find('body').eq(0);
                 backdropDomEl = angular.element('<div id="jtb-backdrop" uib-modal-backdrop="modal-backdrop"></div>');
                 backdropDomEl.attr({
@@ -196,8 +199,11 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapBackdropMan
             }
 
             function removeBackdrop() {
+                if (angular.isUndefined(backdropDomEl)) {
+                    return;
+                }
                 var body = $document.find('body').eq(0);
-                $animate.leave(backdropDomEl).then(function() {
+                $animate.leave(backdropDomEl).then(function () {
                     body.removeClass(BODY_CLASS);
                     backdropDomEl = undefined;
                 });
