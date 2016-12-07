@@ -125,7 +125,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 return promise.promise;
             }
 
-            function generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB, successCB) {
+            function generalizedConfirmedTakeHttpAction(confirmMessage, httpActionCB) {
                 var promise = $q.defer();
                 var params = {
                     controller: ['$uibModalInstance', 'message', ConfirmDialogController],
