@@ -149,6 +149,7 @@ gulp.task('jshint', function () {
  * Run test once and exit
  */
 gulp.task('test-src', function (done) {
+    runSequence('cache-html');
     karma.start({
         configFile: __dirname + '/karma-src.conf.js',
         singleRun: true
