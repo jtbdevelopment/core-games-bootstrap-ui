@@ -115,8 +115,8 @@ describe('Service: jtbBootstrapGameActions', function () {
 
     function testStandardConfirmDialog() {
         testCommonConfirmDialog();
-        expect(openParams.template).toEqual('<div class="game-confirm-dialog"><div class="modal-header"><h4 class="modal-title">{{confirmDialog.confirmMessage}}</h4></div><div class="modal-body"><span class="confirm-message">Are you sure?</span></div><div class="modal-footer"><button class="btn btn-default btn-danger action-button" ng-click="confirmDialog.takeAction()">Yes</button><button class="btn btn-default btn-default btn-default-focus cancel-button" ng-click="confirmDialog.cancelAction()">No</button></div></div>');
-        expect(openParams.templateUrl).toBeUndefined();
+        expect(openParams.templateUrl).toEqual('views/core-bs/actions/default-action-confirm-dialog.html');
+        expect(openParams.template).toBeUndefined();
     }
 
     function testCustomConfirmDialog() {
@@ -142,8 +142,8 @@ describe('Service: jtbBootstrapGameActions', function () {
 
     function testStandardErrorDialog() {
         testCommonErrorDialog();
-        expect(openParams.template).toEqual('<div class="game-error-dialog" role="dialog"><div class="modal-header"><h4 class="modal-title">Sorry!</h4></div><div class="modal-body"><span class="error-message">{{errorDialog.errorMessage}}</span></div><div class="modal-footer"><button class="btn btn-default btn-info btn-default-focus close-button" ng-click="errorDialog.closeError()">OK</button></div></div>');
-        expect(openParams.templateUrl).toBeUndefined();
+        expect(openParams.templateUrl).toEqual('views/core-bs/actions/default-action-error-dialog.html');
+        expect(openParams.template).toBeUndefined();
     }
 
     function testCustomErrorDialog() {

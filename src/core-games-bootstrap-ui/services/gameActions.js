@@ -41,36 +41,8 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 };
             }
 
-            var defaultErrorDialog =
-                '<div class="game-error-dialog" role="dialog">' +
-                '<div class="modal-header">' +
-                '<h4 class="modal-title">Sorry!</h4>' +
-                '</div>' +
-                '<div class="modal-body">' +
-                '<span class="error-message">{{errorDialog.errorMessage}}</span>' +
-                '</div>' +
-                '<div class="modal-footer">' +
-                '<button class="btn btn-default btn-info btn-default-focus close-button" ' +
-                'ng-click="errorDialog.closeError()">OK</button>' +
-                '</div>' +
-                '</div>';
-            var defaultConfirmDialog =
-                '<div class="game-confirm-dialog">' +
-                '<div class="modal-header">' +
-                '<h4 class="modal-title">{{confirmDialog.confirmMessage}}</h4>' +
-                '</div>' +
-                '<div class="modal-body">' +
-                '<span class="confirm-message">Are you sure?</span>' +
-                '</div>' +
-                '<div class="modal-footer">' +
-                '<button class="btn btn-default btn-danger action-button" ' +
-                'ng-click="confirmDialog.takeAction()">Yes</button>' +
-                '<button class="btn btn-default btn-default btn-default-focus cancel-button" ' +
-                'ng-click="confirmDialog.cancelAction()">No</button>' +
-                '</div>' +
-                '</div>';
-            var htmlErrorDialogTemplate;
-            var htmlConfirmDialogTemplate;
+            var htmlErrorDialogTemplate = 'views/core-bs/actions/default-action-error-dialog.html';
+            var htmlConfirmDialogTemplate = 'views/core-bs/actions/default-action-confirm-dialog.html';
 
             function defaultErrorCallback(errorMessage) {
                 var params = {
@@ -82,11 +54,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                         }
                     }
                 };
-                if (angular.isDefined(htmlErrorDialogTemplate)) {
-                    params.templateUrl = htmlErrorDialogTemplate;
-                } else {
-                    params.template = defaultErrorDialog;
-                }
+                params.templateUrl = htmlErrorDialogTemplate;
                 $uibModal.open(params);
             }
 
@@ -136,11 +104,7 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                         }
                     }
                 };
-                if (angular.isDefined(htmlConfirmDialogTemplate)) {
-                    params.templateUrl = htmlConfirmDialogTemplate;
-                } else {
-                    params.template = defaultConfirmDialog;
-                }
+                params.templateUrl = htmlConfirmDialogTemplate;
                 $uibModal.open(params).result.then(function () {
                         generalizeTakeActionPromiseHandler(httpActionCB()).then(function (updatedGame) {
                             promise.resolve(updatedGame);

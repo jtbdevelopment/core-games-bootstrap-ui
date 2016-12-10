@@ -47,8 +47,8 @@ describe('Service: errorHandler registered', function () {
 
     function testStandardErrorDialog() {
         testCommonErrorDialog();
-        expect(openParams.template).toEqual('<div class="general-error-dialog" role="dialog"><div class="modal-header"><h4 class="modal-title">Sorry!</h4></div><div class="modal-body"><span class="error-message">Something has gone wrong, going to try to re-login and reset.</span></div><div class="modal-footer"><button class="btn btn-default btn-info btn-default-focus close-button" ng-click="errorDialog.closeError()">OK</button></div></div>');
-        expect(openParams.templateUrl).toBeUndefined();
+        expect(openParams.templateUrl).toEqual('views/core-bs/errors/default-error-dialog.html');
+        expect(openParams.template).toBeUndefined();
     }
 
     it('test an invalid session error broadcast is handled', function () {
