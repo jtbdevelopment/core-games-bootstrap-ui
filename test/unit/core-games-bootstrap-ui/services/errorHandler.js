@@ -47,7 +47,7 @@ describe('Service: errorHandler registered', function () {
 
     function testStandardErrorDialog() {
         testCommonErrorDialog();
-        expect(openParams.templateUrl).toEqual('views/core-bs/errors/default-error-dialog.html');
+        expect(openParams.templateUrl).toEqual('views/core-bs/errors/error-dialog.html');
         expect(openParams.template).toBeUndefined();
     }
 

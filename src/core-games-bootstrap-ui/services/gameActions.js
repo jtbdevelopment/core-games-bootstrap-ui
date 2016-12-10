@@ -41,8 +41,8 @@ angular.module('coreGamesBootstrapUi.services').factory('jtbBootstrapGameActions
                 };
             }
 
-            var htmlErrorDialogTemplate = 'views/core-bs/actions/default-action-error-dialog.html';
-            var htmlConfirmDialogTemplate = 'views/core-bs/actions/default-action-confirm-dialog.html';
+            var htmlErrorDialogTemplate = 'views/core-bs/actions/action-error-dialog.html';
+            var htmlConfirmDialogTemplate = 'views/core-bs/actions/action-confirm-dialog.html';
 
             function defaultErrorCallback(errorMessage) {
                 var params = {

@@ -14,7 +14,7 @@ angular.module('coreGamesBootstrapUi.services').run(
             var params = {
                 controller: ['$uibModalInstance', ErrorDialogController],
                 controllerAs: 'errorDialog',
-                templateUrl: 'views/core-bs/errors/default-error-dialog.html'
+                templateUrl: 'views/core-bs/errors/error-dialog.html'
             };
 
             function showErrorAndReconnect() {

@@ -115,7 +115,7 @@ describe('Service: jtbBootstrapGameActions', function () {
 
     function testStandardConfirmDialog() {
         testCommonConfirmDialog();
-        expect(openParams.templateUrl).toEqual('views/core-bs/actions/default-action-confirm-dialog.html');
+        expect(openParams.templateUrl).toEqual('views/core-bs/actions/action-confirm-dialog.html');
         expect(openParams.template).toBeUndefined();
     }
 
@@ -142,7 +142,7 @@ describe('Service: jtbBootstrapGameActions', function () {
 
     function testStandardErrorDialog() {
         testCommonErrorDialog();
-        expect(openParams.templateUrl).toEqual('views/core-bs/actions/default-action-error-dialog.html');
+        expect(openParams.templateUrl).toEqual('views/core-bs/actions/action-error-dialog.html');
         expect(openParams.template).toBeUndefined();
     }
 
