@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Service: jtbBootstrapGameActions', function () {
+describe('Service: jtbBootstrapVersionNotesService', function () {
 
     beforeEach(module('coreGamesBootstrapUi.services'));
 
