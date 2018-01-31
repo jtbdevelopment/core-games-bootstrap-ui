@@ -1,0 +1,16 @@
+<div class="game-confirm-dialog">
+    <div class="modal-header">
+        <h4 class="modal-title">{{confirmMessage}}</h4>
+    </div>
+    <div class="modal-body">
+        <span class="confirm-message">Are you sure?</span>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger action-button"
+                (click)="activeModal.close()">Yes
+        </button>
+        <button class="btn btn-default focus cancel-button"
+                (click)="activeModal.dismiss()">No
+        </button>
+    </div>
+</div>

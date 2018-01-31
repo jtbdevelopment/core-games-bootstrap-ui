@@ -1,0 +1,13 @@
+<div class="version-dialog">
+    <div class="modal-header">
+        <h3 class="modal-title">Welcome to version {{config.version}}</h3>
+    </div>
+    <div class="modal-body">
+        <span class="version-message">{{config.releaseNotes}}</span>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-info focus close-button"
+                (click)="activeModal.dismiss()">OK
+        </button>
+    </div>
+</div>

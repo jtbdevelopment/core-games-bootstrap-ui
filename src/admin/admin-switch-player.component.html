@@ -1,0 +1,51 @@
+<div class="admin-user">
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-secondary btn-success btn-stop-simulating"
+                    [disabled]="!revertEnabled" (click)="revertToNormal()">Stop
+            </button>
+        </div>
+        <div class="col-8">{{revertText}}</div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-default focus btn-primary btn-get-users"
+                    (click)="refreshUsers()">Get Users
+            </button>
+        </div>
+        <div class="col-8">
+            <input class="form-control" type="text" [(ngModel)]="searchText"
+                   placeholder="And Name contains..">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped table-sm table-admin-users">
+                <tr>
+                    <th>Display Name</th>
+                    <th>ID</th>
+                    <th>Switch</th>
+                </tr>
+                <tr *ngFor="let player of players">
+                    <td>{{player.displayName}}</td>
+                    <td>{{player.id}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-danger btn-change-user" id="{{player.id}}"
+                                (click)="switchToPlayer(player.id)">Switch to this user..
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ngb-pagination [pageSize]="pageSize"
+                            [directionLinks]="false"
+                            [collectionSize]="totalPlayers"
+                            [(page)]="currentPage"
+                            (pageChange)="changePage()">
+            </ngb-pagination>
+        </div>
+    </div>
+</div>
