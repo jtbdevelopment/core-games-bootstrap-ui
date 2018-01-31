@@ -1,180 +1,221 @@
-var gulp = require('gulp');
-var karma = require('karma').server;
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var path = require('path');
-var plumber = require('gulp-plumber');
-var runSequence = require('run-sequence');
-var jshint = require('gulp-jshint');
-var bump = require('gulp-bump');
-var git = require('gulp-git');
-var filter = require('gulp-filter');
-var tagVersion = require('gulp-tag-version');
-var minifyHtml = require('gulp-htmlmin');
-var angularTemplateCache = require('gulp-angular-templatecache');
-/**
- * File patterns
- **/
+/* eslint-disable */
+var gulp = require('gulp'),
+    path = require('path'),
+    ngc = require('@angular/compiler-cli/src/main').main,
+    rollup = require('gulp-rollup'),
+    rename = require('gulp-rename'),
+    del = require('del'),
+    runSequence = require('run-sequence'),
+    inlineResources = require('./tools/gulp/inline-resources');
 
-// Root directory
-var rootDirectory = path.resolve('./');
-
-// Source directory for build process
-var sourceDirectory = path.join(rootDirectory, './src');
-var testDirectory = path.join(rootDirectory, './test');
-
-var htmlFiles = [
-    path.join(sourceDirectory, '/**/*.html')
-];
-
-var generatedTemplates = path.join(sourceDirectory, '/**/templates/templates.js');
-
-var sourceFiles = [
-    // Make sure module files are handled first
-    path.join(sourceDirectory, '/**/*.module.js'),
-
-    // Then add all JavaScript files
-    path.join(sourceDirectory, '/**/*.js')
-];
-
-var allSourceFiles = [].concat(sourceFiles).concat(generatedTemplates);
-
-var testFiles = [
-    // Then add all JavaScript files
-    path.join(testDirectory, '/**/*.js')
-];
-
-var lintFiles = [
-    'gulpfile.js',
-    // Karma configuration
-    'karma-*.conf.js',
-    //  exclude generated for line too long issue
-    '!' + generatedTemplates
-].concat(sourceFiles);
+const rootFolder = path.join(__dirname);
+const srcFolder = path.join(rootFolder, 'src');
+const tmpFolder = path.join(rootFolder, '.tmp');
+const buildFolder = path.join(rootFolder, 'build');
+const distFolder = path.join(rootFolder, 'dist');
 
 /**
- * Bumping version number and tagging the repository with it.
- * Please read http://semver.org/
- *
- * You can use the commands
- *
- *     gulp patch     # makes v0.1.0 → v0.1.1
- *     gulp feature   # makes v0.1.1 → v0.2.0
- *     gulp release   # makes v0.2.1 → v1.0.0
- *
- * To bump the version numbers accordingly after you did a patch,
- * introduced a feature or made a backwards-incompatible release.
+ * 1. Delete /dist folder
  */
+gulp.task('clean:dist', function () {
 
-function inc(importance) {
-    // get all the files to bump version in
-    return gulp.src(['./package.json', './bower.json'])
-    // bump the version number in those files
-        .pipe(bump({type: importance}))
-        // save it back to filesystem
-        .pipe(gulp.dest('./'))
-        // commit the changed version number
-        .pipe(git.commit('bumps package version'))
-
-        // read only one file to get the version number
-        .pipe(filter('package.json'))
-        // **tag it in the repository**
-        .pipe(tagVersion());
-}
-
-gulp.task('patch', function () {
-    return inc('patch');
-});
-gulp.task('feature', function () {
-    return inc('minor');
-});
-gulp.task('release', function () {
-    return inc('major');
+    // Delete contents but not dist folder to avoid broken npm links
+    // when dist directory is removed while npm link references it.
+    return deleteFolders([distFolder + '/**', '!' + distFolder]);
 });
 
-gulp.task('cache-html', function () {
-    gulp
-        .src(htmlFiles)
-        .pipe(minifyHtml({collapseWhitespace: true}))
-        .pipe(angularTemplateCache('templates.js', {
-            root: 'views/core-bs/',
-            module: 'coreGamesBootstrapUi.templates',
-            standalone: false,
-            base: path.join(sourceDirectory, '/core-games-bootstrap-ui/templates/')
+/**
+ * 2. Clone the /src folder into /.tmp. If an npm link inside /src has been made,
+ *    then it's likely that a node_modules folder exists. Ignore this folder
+ *    when copying to /.tmp.
+ */
+gulp.task('copy:source', function () {
+    return gulp.src([`${srcFolder}/**/*`, `!${srcFolder}/node_modules`])
+        .pipe(gulp.dest(tmpFolder));
+});
+
+/**
+ * 3. Inline template (.html) and style (.css) files into the the component .ts files.
+ *    We do this on the /.tmp folder to avoid editing the original /src files
+ */
+gulp.task('inline-resources', function () {
+    return Promise.resolve()
+        .then(() => inlineResources(tmpFolder));
+});
+
+
+/**
+ * 4. Run the Angular compiler, ngc, on the /.tmp folder. This will output all
+ *    compiled modules to the /build folder.
+ *
+ *    As of Angular 5, ngc accepts an array and no longer returns a promise.
+ */
+gulp.task('ngc', function () {
+    ngc(['--project', `${tmpFolder}/tsconfig.es5.json`]);
+    return Promise.resolve()
+});
+
+/**
+ * 5. Run rollup inside the /build folder to generate our Flat ES module and place the
+ *    generated file into the /dist folder
+ */
+gulp.task('rollup:fesm', function () {
+    return gulp.src(`${buildFolder}/**/*.js`)
+    // transform the files here.
+        .pipe(rollup({
+
+            // Bundle's entry point
+            // See "input" in https://rollupjs.org/#core-functionality
+            input: `${buildFolder}/index.js`,
+
+            // Allow mixing of hypothetical and actual files. "Actual" files can be files
+            // accessed by Rollup or produced by plugins further down the chain.
+            // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+            // when subdirectories are used in the `src` directory.
+            allowRealFiles: true,
+
+            // A list of IDs of modules that should remain external to the bundle
+            // See "external" in https://rollupjs.org/#core-functionality
+            external: [
+                '@angular/core',
+                '@angular/common',
+            ],
+
+            // Format of generated bundle
+            // See "format" in https://rollupjs.org/#core-functionality
+            format: 'es'
         }))
-        .pipe(gulp.dest(path.join(sourceDirectory, '/core-games-bootstrap-ui/templates/')));
-});
-
-gulp.task('build', function () {
-    gulp.src(allSourceFiles)
-        .pipe(plumber())
-        .pipe(concat('core-games-bootstrap-ui.js'))
-        .pipe(gulp.dest('./dist/'))
-        .pipe(uglify())
-        .pipe(rename('core-games-bootstrap-ui.min.js'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest(distFolder));
 });
 
 /**
- * Process
+ * 6. Run rollup inside the /build folder to generate our UMD module and place the
+ *    generated file into the /dist folder
  */
-gulp.task('process-all', function (done) {
-    runSequence('cache-html', 'jshint', 'test-src', 'build', done);
+gulp.task('rollup:umd', function () {
+    return gulp.src(`${buildFolder}/**/*.js`)
+    // transform the files here.
+        .pipe(rollup({
+
+            // Bundle's entry point
+            // See "input" in https://rollupjs.org/#core-functionality
+            input: `${buildFolder}/index.js`,
+
+            // Allow mixing of hypothetical and actual files. "Actual" files can be files
+            // accessed by Rollup or produced by plugins further down the chain.
+            // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+            // when subdirectories are used in the `src` directory.
+            allowRealFiles: true,
+
+            // A list of IDs of modules that should remain external to the bundle
+            // See "external" in https://rollupjs.org/#core-functionality
+            external: [
+                '@angular/core',
+                '@angular/common',
+            ],
+
+            // Format of generated bundle
+            // See "format" in https://rollupjs.org/#core-functionality
+            format: 'umd',
+
+            // Export mode to use
+            // See "exports" in https://rollupjs.org/#danger-zone
+            exports: 'named',
+
+            // The name to use for the module for UMD/IIFE bundles
+            // (required for bundles with exports)
+            // See "name" in https://rollupjs.org/#core-functionality
+            name: 'jtb-core-games-ui',
+
+            // See "globals" in https://rollupjs.org/#core-functionality
+            globals: {
+                typescript: 'ts'
+            }
+
+        }))
+        .pipe(rename('jtb-core-games-ui.umd.js'))
+        .pipe(gulp.dest(distFolder));
 });
 
 /**
- * Watch task
+ * 7. Copy all the files from /build to /dist, except .js files. We ignore all .js from /build
+ *    because with don't need individual modules anymore, just the Flat ES module generated
+ *    on step 5.
+ */
+gulp.task('copy:build', function () {
+    return gulp.src([`${buildFolder}/**/*`, `!${buildFolder}/**/*.js`])
+        .pipe(gulp.dest(distFolder));
+});
+
+/**
+ * 8. Copy package.json from /src to /dist
+ */
+gulp.task('copy:manifest', function () {
+    return gulp.src([`${srcFolder}/package.json`])
+        .pipe(gulp.dest(distFolder));
+});
+
+/**
+ * 9. Copy README.md from / to /dist
+ */
+gulp.task('copy:readme', function () {
+    return gulp.src([path.join(rootFolder, 'README.MD')])
+        .pipe(gulp.dest(distFolder));
+});
+
+/**
+ * 10. Delete /.tmp folder
+ */
+gulp.task('clean:tmp', function () {
+    return deleteFolders([tmpFolder]);
+});
+
+/**
+ * 11. Delete /build folder
+ */
+gulp.task('clean:build', function () {
+    return deleteFolders([buildFolder]);
+});
+
+gulp.task('compile', function () {
+    runSequence(
+        'clean:dist',
+        'copy:source',
+        'inline-resources',
+        'ngc',
+        'rollup:fesm',
+        'rollup:umd',
+        'copy:build',
+        'copy:manifest',
+        'copy:readme',
+        'clean:build',
+        'clean:tmp',
+        function (err) {
+            if (err) {
+                console.log('ERROR:', err.message);
+                deleteFolders([distFolder, tmpFolder, buildFolder]);
+            } else {
+                console.log('Compilation finished succesfully');
+            }
+        });
+});
+
+/**
+ * Watch for any change in the /src folder and compile files
  */
 gulp.task('watch', function () {
-
-    // Watch JavaScript files
-    gulp.watch(htmlFiles, ['process-all']);
-    gulp.watch(sourceFiles, ['process-all']);
-    gulp.watch(testFiles, ['process-all']);
+    gulp.watch(`${srcFolder}/**/*`, ['compile']);
 });
 
-/**
- * Validate source JavaScript
- */
-gulp.task('jshint', function () {
-    return gulp.src(lintFiles)
-        .pipe(plumber())
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'));
-});
+gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
+
+gulp.task('build', ['clean', 'compile']);
+gulp.task('build:watch', ['build', 'watch']);
+gulp.task('default', ['build:watch']);
 
 /**
- * Run test once and exit
+ * Deletes the specified folder
  */
-gulp.task('test-src', function (done) {
-    karma.start({
-        configFile: __dirname + '/karma-src.conf.js',
-        singleRun: true
-    }, done);
-});
-
-/**
- * Run test once and exit
- */
-gulp.task('test-dist-concatenated', function (done) {
-    karma.start({
-        configFile: __dirname + '/karma-dist-concatenated.conf.js',
-        singleRun: true
-    }, done);
-});
-
-/**
- * Run test once and exit
- */
-gulp.task('test-dist-minified', function (done) {
-    karma.start({
-        configFile: __dirname + '/karma-dist-minified.conf.js',
-        singleRun: true
-    }, done);
-});
-
-gulp.task('default', function () {
-    runSequence('process-all', 'watch');
-});
+function deleteFolders(folders) {
+    return del(folders);
+}
