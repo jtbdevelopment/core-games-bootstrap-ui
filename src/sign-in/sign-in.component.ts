@@ -12,7 +12,8 @@ export class SignInComponent {
 
     constructor(private facebookLogin: FacebookLoginService,
                 private facebookInit: FacebookInitializerService,
-                @Inject('Window') private window: Window) {
+                //  TODO - change any to Window - see https://github.com/angular/angular/issues/15640
+                @Inject('Window') private window: any) {
         this.showManual = true;
         this.showFacebook = false;
         this.facebookInit.fbReady.then(() => {

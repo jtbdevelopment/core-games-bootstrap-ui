@@ -21,8 +21,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "jtb-core-games-ui.js",
-    "flatModuleId": "jtb-core-games-ui"
+    "flatModuleOutFile": "jtb-core-games-bootstrap-ui.js",
+    "flatModuleId": "jtb-core-games-bootstrap-ui"
   },
   "files": [
     "./index.ts"
