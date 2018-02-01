@@ -10,6 +10,8 @@ import {BootstrapRerouteService} from './bootstrap-reroute.service';
 import {HttpClientModule} from '@angular/common/http';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './bootstrap-actions.service';
+
 @NgModule({
     imports: [
         HttpClientModule,

@@ -4,6 +4,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SignedInComponent} from './signed-in.component';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './signed-in.component';
+
 @NgModule({
     imports: [
         BrowserModule,

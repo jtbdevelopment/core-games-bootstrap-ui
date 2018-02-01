@@ -5,6 +5,7 @@ import {DefaultErrorComponent} from './default-error.component';
 import {BootstrapErrorListenerService} from './bootstrap-error-listener.service';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './bootstrap-error-listener.service';
 @NgModule({
     imports: [
         BrowserModule,

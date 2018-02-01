@@ -6,6 +6,8 @@ import {MultiSelectModule} from 'primeng/primeng';
 import {FormsModule} from '@angular/forms';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './invite.component';
+
 @NgModule({
     imports: [
         BrowserModule,

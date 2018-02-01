@@ -8,6 +8,8 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './admin.component';
+
 @NgModule({
     imports: [
         BrowserModule,

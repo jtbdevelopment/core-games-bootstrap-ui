@@ -9,6 +9,16 @@ import {JTBCoreGamesUIBSBackdropModule} from './backdrop/jtb.core.games.ui.bs.ba
 import {JTBCoreGamesUIBSErrorsModule} from './errors/jtb.core.games.ui.bs.errors.module';
 import {JTBCoreGamesUIBInviteModule} from './invite/jtb.core.games.ui.bs.invite.module';
 
+export {AdminComponent} from './admin/jtb.core.games.ui.bs.admin.module';
+export {BootstrapActionsService} from './actions/jtb.core.games.ui.bs.actions.module';
+export {BootstrapAdsService} from './ads/jtb.core.games.ui.bs.ads.module';
+export {BootstrapBackdropService} from './backdrop/jtb.core.games.ui.bs.backdrop.module';
+export {BootstrapErrorListenerService} from './errors/jtb.core.games.ui.bs.errors.module';
+export {InviteComponent} from './invite/jtb.core.games.ui.bs.invite.module';
+export {SignInComponent} from './sign-in/jtb.core.games.ui.bs.sign-in.module';
+export {SignedInComponent} from './signed-in/jtb.core.games.ui.bs.signed-in.module';
+export {VersionService} from './version-notes/jtb.core.games.ui.bs.version-notes.module';
+
 @NgModule({
     imports: [
         JTBCoreGamesUIBSAdminModule,

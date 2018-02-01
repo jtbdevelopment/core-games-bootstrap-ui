@@ -5,6 +5,8 @@ import {VersionService} from './version.service';
 import {DefaultVersionNotesComponent} from './default-version-notes.component';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
+export * from './version.service';
+
 @NgModule({
     imports: [
         BrowserModule,
