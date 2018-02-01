@@ -10,7 +10,6 @@ import {DefaultActionErrorComponent} from './default-action-error.component';
 import {DefaultActionConfirmComponent} from './default-action-confirm.component';
 import {GameCacheService, GameFactory, MultiPlayerGame} from 'jtb-core-games-ui';
 
-
 @Component({
     selector: 'ngbd-modal-content',
     template: '<p class="error">{{errorMessage}}</p><p class="confirm">{{confirmMessage}}</p>'
