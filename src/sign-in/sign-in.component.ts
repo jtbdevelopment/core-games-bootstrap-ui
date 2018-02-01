@@ -3,7 +3,7 @@ import {FacebookInitializerService, FacebookLoginService} from 'jtb-core-games-u
 
 @Component({
     selector: 'sign-in',
-    template: require('./sign-in.component.html'),
+    templateUrl: './sign-in.component.html',
 })
 export class SignInComponent {
     public message: string = '';

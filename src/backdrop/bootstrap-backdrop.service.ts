@@ -1,3 +1,7 @@
+//  Based of NgbModal code
+//
+//  TODO - figure out how to test - cant mock application ref
+//
 import {
     ApplicationRef,
     ComponentFactory,
@@ -6,23 +10,18 @@ import {
     Injectable,
     Injector
 } from '@angular/core';
-import {NgbModalBackdrop} from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
+import {JTBModalBackdrop} from './bootstrap-backdrop.component';
 
-
-//  Based of NgbModal code
-//
-//  TODO - figure out how to test - cant mock application ref
-//
 @Injectable()
 export class BootstrapBackdropService {
-    private _backdropFactory: ComponentFactory<NgbModalBackdrop>;
+    private _backdropFactory: ComponentFactory<JTBModalBackdrop>;
     private _backdropCount = 1;
-    private _backdrop: ComponentRef<NgbModalBackdrop>;
+    private _backdrop: ComponentRef<JTBModalBackdrop>;
 
     constructor(private _applicationRef: ApplicationRef,
                 private _injector: Injector,
                 private _componentFactoryResolver: ComponentFactoryResolver) {
-        this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(NgbModalBackdrop);
+        this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(JTBModalBackdrop);
     }
 
     public addBackdrop(): void {

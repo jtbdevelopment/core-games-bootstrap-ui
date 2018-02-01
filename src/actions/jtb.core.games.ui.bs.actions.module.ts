@@ -33,6 +33,7 @@ import {JTBCoreGamesUI} from 'jtb-core-games-ui';
     ]
 })
 export class JTBCoreGamesUIBSActionsModule {
+    // noinspection JSUnusedLocalSymbols
     constructor(private reroute: BootstrapRerouteService) {
 
     }

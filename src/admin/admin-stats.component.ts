@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'admin-stats',
-    template: require('./admin-stats.component.html'),
+    templateUrl: './admin-stats.component.html',
 })
 export class AdminStatsComponent {
     private static dayInSeconds: number = 86400;

@@ -4,7 +4,7 @@ import {PlayerService} from 'jtb-core-games-ui';
 
 @Component({
     selector: 'signed-in',
-    template: require('./signed-in.component.html'),
+    templateUrl: './signed-in.component.html',
 })
 export class SignedInComponent {
     constructor(private playerService: PlayerService, private router: Router) {

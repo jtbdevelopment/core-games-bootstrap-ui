@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Subject} from 'rxjs/Subject';
@@ -45,7 +44,7 @@ export class BootstrapActionsService {
         this.errorModal = modal;
     }
 
-    public takeAction(httpObservable: Observable<Response>): Observable<Game> {
+    public takeAction(httpObservable: Observable<Object>): Observable<Game> {
         let observable: Subject<Game> = new Subject<Game>();
         this.backdrop.addBackdrop();
         httpObservable
@@ -64,7 +63,7 @@ export class BootstrapActionsService {
         return observable;
     }
 
-    public takeActionWithConfirm(message: string, httpObservable: Observable<Response>): Observable<Game> {
+    public takeActionWithConfirm(message: string, httpObservable: Observable<Object>): Observable<Game> {
         let observable: Subject<Game> = new Subject<Game>();
         let ngbModalRef = this.modalService.open(this.confirmModal);
         ngbModalRef.componentInstance.confirmMessage = message;
@@ -114,7 +113,7 @@ export class BootstrapActionsService {
         this.takeActionWithConfirm('End this series?', this.gameAction(game, 'endRematch'));
     }
 
-    public gameAction(game: Game, action: string, body?: any): Observable<Response> {
+    public gameAction(game: Game, action: string, body?: any): Observable<Object> {
         return this.http.put(this.gameURL(game) + action, body);
     }
 

@@ -4,7 +4,7 @@ import {AppConfig, FacebookInviteService, FriendsService, Invitable} from 'jtb-c
 
 @Component({
     selector: 'invite-friends',
-    template: require('./invite.component.html'),
+    templateUrl: './invite.component.html',
 })
 export class InviteComponent {
     public invitable: Invitable[] = [];

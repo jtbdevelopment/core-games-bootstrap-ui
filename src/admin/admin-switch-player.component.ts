@@ -4,7 +4,7 @@ import {Player, PlayerService} from 'jtb-core-games-ui';
 
 @Component({
     selector: 'admin-switch-player',
-    template: require('./admin-switch-player.component.html'),
+    templateUrl: './admin-switch-player.component.html',
 })
 export class AdminSwitchPlayerComponent {
     public revertText: string = '';

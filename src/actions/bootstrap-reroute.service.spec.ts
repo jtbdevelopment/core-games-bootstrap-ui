@@ -1,9 +1,9 @@
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {BootstrapRerouteService} from './bootstrap-reroute.service';
-import {ReflectiveInjector} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
 import {Game, GameCacheService} from 'jtb-core-games-ui';
+import {TestBed} from '@angular/core/testing';
 
 class MockGameCacheService {
     public observables: Map<string, Subject<Game>> = new Map<string, Subject<Game>>();
@@ -26,14 +26,16 @@ describe('Service: bootstrap reroute service', () => {
     let gameCache: MockGameCacheService;
 
     beforeEach(() => {
-        this.injector = ReflectiveInjector.resolveAndCreate([
-            {provide: GameCacheService, useClass: MockGameCacheService},
-            {provide: Router, useClass: MockRouter},
-            BootstrapRerouteService
-        ]);
-        rerouteService = this.injector.get(BootstrapRerouteService);
-        gameCache = this.injector.get(GameCacheService);
-        router = this.injector.get(Router) as MockRouter;
+        this.injector = TestBed.configureTestingModule({
+            providers: [
+                {provide: GameCacheService, useClass: MockGameCacheService},
+                {provide: Router, useClass: MockRouter},
+                BootstrapRerouteService
+            ]
+        });
+        rerouteService = TestBed.get(BootstrapRerouteService);
+        gameCache = TestBed.get(GameCacheService);
+        router = TestBed.get(Router) as MockRouter;
     });
 
     describe('when enabled', () => {

@@ -3,7 +3,7 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'ngbd-modal-content',
-    template: require('./default-action-error.component.html')
+    templateUrl: './default-action-error.component.html'
 })
 export class DefaultActionErrorComponent {
     @Input() public errorMessage: string;
