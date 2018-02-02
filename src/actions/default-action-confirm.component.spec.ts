@@ -29,7 +29,7 @@ describe('Component:  default action confirm component', () => {
     it('displays confirm message', () => {
         fixture.componentInstance.confirmMessage = 'This will be very bad!';
         fixture.detectChanges();
-        expect(fixture.nativeElement.querySelector('.modal-title').textContent.trim()).toEqual('This will be very bad!');
+        expect(fixture).toMatchSnapshot();
     });
 
     it('cancel modal', () => {

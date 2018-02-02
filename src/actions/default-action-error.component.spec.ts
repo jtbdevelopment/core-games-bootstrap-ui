@@ -28,7 +28,7 @@ describe('Component:  default action error component', () => {
     it('displays error message', () => {
         fixture.componentInstance.errorMessage = 'Something went wrong!';
         fixture.detectChanges();
-        expect(fixture.nativeElement.querySelector('.error-message').textContent.trim()).toEqual('Something went wrong!');
+        expect(fixture).toMatchSnapshot();
     });
 
     it('cancel modal', () => {

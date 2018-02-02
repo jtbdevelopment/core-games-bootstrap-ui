@@ -38,7 +38,7 @@ describe('Component:  default version notes component', () => {
     });
 
     it('displays release notes', () => {
-        expect(fixture.nativeElement.querySelector('.version-message').textContent.trim()).toEqual(releaseNotes);
+        expect(fixture).toMatchSnapshot();
     });
 
     it('close modal', () => {

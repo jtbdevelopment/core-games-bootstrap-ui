@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component:  signed in component displays login successful 1`] = `
+<signed-in
+  playerService={[Function MockPlayerService]}
+  router={[Function MockRouter]}
+>
+  <div
+    class="signed-in container-fluid"
+  >
+    
+      
+    <div
+      class="row text-center"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <p>
+          Login successful...
+        </p>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</signed-in>
+`;

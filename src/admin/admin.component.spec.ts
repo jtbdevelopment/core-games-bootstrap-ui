@@ -41,7 +41,6 @@ describe('admin component', () => {
     it('should render basics, switch hidden by tabs', () => {
         const fixture = TestBed.createComponent(AdminComponent);
         fixture.detectChanges();
-        expect(fixture.nativeElement.querySelector('.admin-stats').textContent.trim()).toEqual('stats');
-        expect(fixture.nativeElement.querySelector('.admin-switch-player')).toBeNull();
+        expect(fixture).toMatchSnapshot();
     });
 });

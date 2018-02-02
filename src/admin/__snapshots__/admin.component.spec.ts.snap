@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`admin component should render basics, switch hidden by tabs 1`] = `
+<admin-screen>
+  <div
+    class="admin-screen"
+  >
+    
+      
+    <ngb-tabset
+      ng-reflect-type="pills"
+      type="pills"
+    >
+      
+      
+      <ul
+        class="nav nav-pills justify-content-start"
+        role="tablist"
+      >
+        
+        
+        
+        <li
+          class="nav-item"
+        >
+          
+          
+          <a
+            aria-controls="ngb-tab-0-panel"
+            aria-disabled="false"
+            aria-expanded="true"
+            class="nav-link active"
+            href=""
+            id="ngb-tab-0"
+            role="tab"
+          >
+            
+            Stats
+            
+            
+          
+          </a>
+          
+        
+        </li>
+        <li
+          class="nav-item"
+        >
+          
+          
+          <a
+            aria-disabled="false"
+            aria-expanded="false"
+            class="nav-link"
+            href=""
+            id="ngb-tab-1"
+            role="tab"
+          >
+            
+            Switch player
+            
+            
+          
+          </a>
+          
+        
+        </li>
+        
+      
+      </ul>
+      
+      
+      <div
+        class="tab-content"
+      >
+        
+        
+        
+        
+          
+        
+        <div
+          aria-expanded="true"
+          aria-labelledby="ngb-tab-0"
+          class="tab-pane active"
+          id="ngb-tab-0-panel"
+          role="tabpanel"
+        >
+          
+            
+          
+          
+                  
+          <admin-stats>
+            <div
+              class="admin-stats"
+            >
+              stats
+            </div>
+          </admin-stats>
+          
+              
+          
+          
+        </div>
+        
+        
+        
+          
+        
+        
+        
+        
+      
+      </div>
+      
+    
+    </ngb-tabset>
+    
+  
+  </div>
+</admin-screen>
+`;

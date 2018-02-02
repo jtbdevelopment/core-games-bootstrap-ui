@@ -69,6 +69,7 @@ describe('Component:  invite component', () => {
         fixture.detectChanges();
         expect(fixture.componentInstance.chosen).toEqual([]);
         expect(fixture.componentInstance.invitable).toEqual(friends);
+        expect(fixture).toMatchSnapshot();
     });
 
     it('cancel closes and does not invite', () => {
@@ -82,6 +83,7 @@ describe('Component:  invite component', () => {
         friendService.invitableFriendSubject.next(friends);
         fixture.componentInstance.chosen = friends;
         fixture.detectChanges();
+        expect(fixture).toMatchSnapshot();
         fixture.nativeElement.querySelector('.invite-friends').click();
         expect(fbInvite.inviteFriends).toHaveBeenCalledWith(friends, 'come play games!');
         expect(modalRef.close).toHaveBeenCalled();

@@ -34,11 +34,9 @@ describe('Component:  signed in component', () => {
         expect(router.navigateByUrl).toHaveBeenCalledWith('/main');
     });
 
-    //  TODO - this test seems lame
     it('displays login successful', () => {
         const fixture = TestBed.createComponent(SignedInComponent);
         fixture.detectChanges();
-        const screen = fixture.nativeElement;
-        expect(screen.querySelector('p').textContent.trim()).toContain('Login successful...');
+        expect(fixture).toMatchSnapshot();
     });
 });

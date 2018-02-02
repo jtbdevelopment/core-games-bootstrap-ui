@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component:  default action confirm component displays confirm message 1`] = `
+<ngbd-modal-content
+  activeModal={[Function MockModal]}
+  confirmMessage={[Function String]}
+>
+  <div
+    class="game-confirm-dialog"
+  >
+    
+      
+    <div
+      class="modal-header"
+    >
+      
+          
+      <h4
+        class="modal-title"
+      >
+        This will be very bad!
+      </h4>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-body"
+    >
+      
+          
+      <span
+        class="confirm-message"
+      >
+        Are you sure?
+      </span>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-footer"
+    >
+      
+          
+      <button
+        class="btn btn-danger action-button"
+      >
+        Yes
+          
+      </button>
+      
+          
+      <button
+        class="btn btn-default focus cancel-button"
+      >
+        No
+          
+      </button>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</ngbd-modal-content>
+`;

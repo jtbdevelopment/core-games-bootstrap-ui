@@ -53,6 +53,7 @@ describe('admin switch player component', () => {
         expect(fixture.componentInstance.revertEnabled).toBeFalsy();
         expect(fixture.componentInstance.revertText).toEqual('You are yourself.');
         expect(fixture.componentInstance.searchText).toEqual('');
+        expect(fixture).toMatchSnapshot();
     });
 
     describe('it after initial page of users loaded', () => {
@@ -85,10 +86,7 @@ describe('admin switch player component', () => {
             expect(fixture.componentInstance.currentPage).toBeCloseTo(1);
             expect(fixture.componentInstance.totalPlayers).toBeCloseTo(40);
             expect(JSON.stringify(fixture.componentInstance.players)).toEqual(JSON.stringify(players));
-
-            players.forEach(p => {
-                expect(fixture.nativeElement.querySelector('#' + p.id)).not.toBeNull();
-            });
+            expect(fixture).toMatchSnapshot();
         });
 
         it('can change pages', fakeAsync(() => {
@@ -119,12 +117,7 @@ describe('admin switch player component', () => {
             expect(fixture.componentInstance.currentPage).toEqual(2);
             expect(fixture.componentInstance.totalPlayers).toBeCloseTo(45);
             expect(JSON.stringify(fixture.componentInstance.players)).toEqual(JSON.stringify(newPlayers));
-            players.forEach(p => {
-                expect(fixture.nativeElement.querySelector('#' + p.id)).toBeNull();
-            });
-            newPlayers.forEach(p => {
-                expect(fixture.nativeElement.querySelector('#' + p.id)).not.toBeNull();
-            });
+            expect(fixture).toMatchSnapshot();
         }));
 
         it('can change search text', () => {
@@ -152,12 +145,7 @@ describe('admin switch player component', () => {
             expect(fixture.componentInstance.totalPlayers).toBeCloseTo(1);
             expect(JSON.stringify(fixture.componentInstance.players)).toEqual(JSON.stringify(newPlayers));
 
-            players.forEach(p => {
-                expect(fixture.nativeElement.querySelector('#' + p.id)).toBeNull();
-            });
-            newPlayers.forEach(p => {
-                expect(fixture.nativeElement.querySelector('#' + p.id)).not.toBeNull();
-            });
+            expect(fixture).toMatchSnapshot();
         });
 
         it('switching players', inject([PlayerService], (playerService) => {
@@ -168,6 +156,7 @@ describe('admin switch player component', () => {
 
             expect(fixture.componentInstance.revertEnabled).toBeTruthy();
             expect(fixture.componentInstance.revertText).toEqual('You are simulating another player.');
+            expect(fixture).toMatchSnapshot();
         }));
 
         it('reverting', inject([PlayerService], (playerService) => {
@@ -180,6 +169,7 @@ describe('admin switch player component', () => {
 
             expect(fixture.componentInstance.revertEnabled).toBeFalsy();
             expect(fixture.componentInstance.revertText).toEqual('You are yourself.');
+            expect(fixture).toMatchSnapshot();
         }));
     });
 

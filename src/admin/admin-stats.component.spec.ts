@@ -92,21 +92,7 @@ describe('admin stats component', () => {
         request.flush(8.9);
 
         fixture.detectChanges();
-
-        let content = fixture.nativeElement.querySelector('.admin-stats').textContent.trim();
-        expect(content).toContain('1.2');
-        expect(content).toContain('3.4');
-
-        expect(content).toContain('2.3');
-        expect(content).toContain('4.5');
-        expect(content).toContain('5.6');
-
-        expect(content).toContain('6.7');
-        expect(content).toContain('7.8');
-        expect(content).toContain('8.9');
-
-        expect(content).toContain('10.2');
-        expect(content).toContain('10.3');
-        expect(content).toContain('10.4');
+        expect(fixture).toMatchSnapshot();
     }));
+
 });

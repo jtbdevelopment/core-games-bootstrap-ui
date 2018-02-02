@@ -1,0 +1,1942 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`admin switch player component it after initial page of users loaded can change pages 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled="false"
+  revertText={[Function String]}
+  searchText=""
+  totalPlayers={[Function Number]}
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+          disabled=""
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are yourself.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model=""
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            <tr>
+              
+                      
+              <td>
+                dn7
+              </td>
+              
+                      
+              <td>
+                id7
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id7"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn8
+              </td>
+              
+                      
+              <td>
+                id8
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id8"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn9
+              </td>
+              
+                      
+              <td>
+                id9
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id9"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn0
+              </td>
+              
+                      
+              <td>
+                id0
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id0"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="45"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="2"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            <li
+              class="page-item"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            1
+            
+                
+                
+          
+              </a>
+              
+        
+            </li>
+            <li
+              class="page-item active"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            2
+            
+                
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                
+          
+              </a>
+              
+        
+            </li>
+            <li
+              class="page-item"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            3
+            
+                
+                
+          
+              </a>
+              
+        
+            </li>
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;
+
+exports[`admin switch player component it after initial page of users loaded can change search text 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled="false"
+  revertText={[Function String]}
+  searchText={[Function String]}
+  totalPlayers={[Function Number]}
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+          disabled=""
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are yourself.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model="dn7"
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            <tr>
+              
+                      
+              <td>
+                dn7
+              </td>
+              
+                      
+              <td>
+                id7
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id7"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="1"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="1"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            <li
+              class="page-item active"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            1
+            
+                
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                
+          
+              </a>
+              
+        
+            </li>
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;
+
+exports[`admin switch player component it after initial page of users loaded does render of players 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled="false"
+  revertText={[Function String]}
+  searchText=""
+  totalPlayers={[Function Number]}
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+          disabled=""
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are yourself.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model=""
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            <tr>
+              
+                      
+              <td>
+                dn1
+              </td>
+              
+                      
+              <td>
+                id1
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id1"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn2
+              </td>
+              
+                      
+              <td>
+                id2
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id2"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id3
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id3"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id4
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id4"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="40"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="1"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            <li
+              class="page-item active"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            1
+            
+                
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                
+          
+              </a>
+              
+        
+            </li>
+            <li
+              class="page-item"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            2
+            
+                
+                
+          
+              </a>
+              
+        
+            </li>
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;
+
+exports[`admin switch player component it after initial page of users loaded reverting 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled="false"
+  revertText={[Function String]}
+  searchText=""
+  totalPlayers={[Function Number]}
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+          disabled=""
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are yourself.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model=""
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            <tr>
+              
+                      
+              <td>
+                dn1
+              </td>
+              
+                      
+              <td>
+                id1
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id1"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn2
+              </td>
+              
+                      
+              <td>
+                id2
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id2"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id3
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id3"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id4
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id4"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="40"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="1"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            <li
+              class="page-item active"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            1
+            
+                
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                
+          
+              </a>
+              
+        
+            </li>
+            <li
+              class="page-item"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            2
+            
+                
+                
+          
+              </a>
+              
+        
+            </li>
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;
+
+exports[`admin switch player component it after initial page of users loaded switching players 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled={[Function Boolean]}
+  revertText={[Function String]}
+  searchText=""
+  totalPlayers={[Function Number]}
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are simulating another player.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model=""
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            <tr>
+              
+                      
+              <td>
+                dn1
+              </td>
+              
+                      
+              <td>
+                id1
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id1"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn2
+              </td>
+              
+                      
+              <td>
+                id2
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id2"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id3
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id3"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            <tr>
+              
+                      
+              <td>
+                dn4
+              </td>
+              
+                      
+              <td>
+                id4
+              </td>
+              
+                      
+              <td>
+                
+                          
+                <button
+                  class="btn btn-danger btn-danger btn-change-user"
+                  id="id4"
+                >
+                  Switch to this user..
+                          
+                </button>
+                
+                      
+              </td>
+              
+                  
+            </tr>
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="40"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="1"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            <li
+              class="page-item active"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            1
+            
+                
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                
+          
+              </a>
+              
+        
+            </li>
+            <li
+              class="page-item"
+            >
+              
+          
+              
+              
+          
+              
+              <a
+                class="page-link"
+                href=""
+              >
+                
+            2
+            
+                
+                
+          
+              </a>
+              
+        
+            </li>
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;
+
+exports[`admin switch player component should render results from http 1`] = `
+<admin-switch-player
+  currentPage={[Function Number]}
+  http={[Function HttpClient]}
+  loggedInPlayer={[Function Player]}
+  pageSize={[Function Number]}
+  player={[Function Player]}
+  playerService={[Function MockPlayerService]}
+  players={[Function Array]}
+  revertEnabled="false"
+  revertText={[Function String]}
+  searchText=""
+  totalPlayers="0"
+>
+  <div
+    class="admin-user"
+  >
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-secondary btn-success btn-stop-simulating"
+          disabled=""
+        >
+          Stop
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        You are yourself.
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col-4"
+      >
+        
+              
+        <button
+          class="btn btn-default focus btn-primary btn-get-users"
+        >
+          Get Users
+              
+        </button>
+        
+          
+      </div>
+      
+          
+      <div
+        class="col-8"
+      >
+        
+              
+        <input
+          class="form-control ng-untouched ng-pristine ng-valid"
+          ng-reflect-model=""
+          placeholder="And Name contains.."
+          type="text"
+        />
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <table
+          class="table table-striped table-sm table-admin-users"
+        >
+          
+                  
+          <tbody>
+            <tr>
+              
+                      
+              <th>
+                Display Name
+              </th>
+              
+                      
+              <th>
+                ID
+              </th>
+              
+                      
+              <th>
+                Switch
+              </th>
+              
+                  
+            </tr>
+            
+                  
+            
+            
+              
+          </tbody>
+        </table>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    <div
+      class="row"
+    >
+      
+          
+      <div
+        class="col"
+      >
+        
+              
+        <ngb-pagination
+          ng-reflect-collection-size="0"
+          ng-reflect-direction-links="false"
+          ng-reflect-page="1"
+          ng-reflect-page-size="20"
+          role="navigation"
+        >
+          
+      
+          <ul
+            class="pagination"
+          >
+            
+        
+            
+            
+  
+        
+            
+            
+        
+            
+            
+        
+            
+            
+  
+        
+            
+            
+      
+          </ul>
+          
+    
+        </ngb-pagination>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</admin-switch-player>
+`;

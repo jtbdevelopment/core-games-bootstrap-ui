@@ -34,8 +34,9 @@ describe('Component:  default error component', () => {
     });
 
     it('displays error', () => {
-        expect(fixture.nativeElement.querySelector('.error-message').textContent.trim()).toEqual('Something has gone wrong, going to try to re-login and reset.');
+        expect(fixture).toMatchSnapshot();
     });
+
 
     it('close modal', () => {
         expect(modal.dismiss).not.toHaveBeenCalled();

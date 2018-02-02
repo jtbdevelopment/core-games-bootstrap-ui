@@ -57,52 +57,32 @@ describe('Component:  sign in component', () => {
 
         it('initially displays manual only', () => {
             fixture.detectChanges();
-            const screen = fixture.nativeElement;
-            expect(screen.querySelector('#sign-in-message')).toBeDefined();
-            expect(screen.querySelector('#sign-in-message')).not.toBeNull();
-            expect(screen.querySelector('#sign-in-facebook')).toBeNull();
-            expect(screen.querySelector('#sign-in-manual')).toBeDefined();
-            expect(screen.querySelector('#sign-in-manual')).not.toBeNull();
-            expect(screen.querySelector('#sign-in-message').textContent.trim()).toEqual('');
+            expect(fixture).toMatchSnapshot();
         });
 
         it('displays facebook after init', fakeAsync(() => {
             fbInit.resolve(true);
             tick();
             fixture.detectChanges();
-            const screen = fixture.nativeElement;
-            expect(screen.querySelector('#sign-in-message')).toBeDefined();
-            expect(screen.querySelector('#sign-in-facebook')).toBeDefined();
-            expect(screen.querySelector('#sign-in-manual')).toBeDefined();
-            expect(screen.querySelector('#sign-in-message').textContent.trim()).toEqual('');
+            expect(fixture).toMatchSnapshot();
         }));
 
         it('initiates auto login if possible', () => {
             fbLogin.canAutoLogin.next(true);
             expect(mockWindow.location.href).toEqual('/auth/facebook');
-            const screen = fixture.nativeElement;
-            expect(screen.querySelector('#sign-in-message')).toBeDefined();
-            expect(screen.querySelector('#sign-in-facebook')).toBeNull();
-            expect(screen.querySelector('#sign-in-manual')).toBeNull();
-            expect(screen.querySelector('#sign-in-message').textContent.trim()).toEqual('');
+            expect(fixture).toMatchSnapshot();
         });
 
         it('Does not initiate auto login if not possible', () => {
             fbLogin.canAutoLogin.next(false);
             expect(mockWindow.location.href).toEqual('');
-            const screen = fixture.nativeElement;
-            expect(screen.querySelector('#sign-in-message')).toBeDefined();
-            expect(screen.querySelector('#sign-in-facebook')).toBeDefined();
-            expect(screen.querySelector('#sign-in-manual')).toBeDefined();
-            expect(screen.querySelector('#sign-in-message').textContent.trim()).toEqual('');
+            expect(fixture).toMatchSnapshot();
         });
 
         it('displays message', () => {
-            let m = 'A Message!';
-            fixture.componentInstance.message = m;
+            fixture.componentInstance.message = 'A Message!';
             fixture.detectChanges();
-            const screen = fixture.nativeElement;
-            expect(screen.querySelector('#sign-in-message').textContent.trim()).toEqual(m);
+            expect(fixture).toMatchSnapshot();
         });
     });
 
@@ -111,10 +91,8 @@ describe('Component:  sign in component', () => {
         tick();
         fixture.detectChanges();
         const screen = fixture.nativeElement;
-        expect(screen.querySelector('#sign-in-facebook')).toBeDefined();
+        expect(fixture).toMatchSnapshot();
         let fbButton = screen.querySelector('#fb-login');
-        expect(fbButton).toBeDefined();
-        expect(fbButton).not.toBeNull();
         fbButton.click();
         expect(fbLogin.initiateLogin).toHaveBeenCalled();
     }));

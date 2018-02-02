@@ -1,0 +1,925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component:  sign in component clicking fb initiates manual fb login 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message=""
+  showFacebook={[Function Boolean]}
+  showManual={[Function Boolean]}
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-facebook"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <a
+            href="javascript:void(0)"
+            id="fb-login"
+          >
+            <img
+              src="../../../images/sign-in-with-facebook.png"
+            />
+          </a>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-manual"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            Don't want to login with Facebook?
+          </p>
+          
+                  
+          
+                  
+          <form
+            action="/signin/authenticate"
+            class="form-group"
+            id="signin"
+            method="post"
+          >
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="username"
+              >
+                Username
+              </label>
+              
+                          
+              <input
+                id="username"
+                name="username"
+                size="25"
+                type="text"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              
+                          
+              <input
+                id="password"
+                name="password"
+                size="25"
+                type="password"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <div
+                class="checkbox"
+              >
+                
+                              
+                <label>
+                  
+                                  
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                  />
+                   Remember me
+                              
+                </label>
+                
+                          
+              </div>
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <button
+                class="btn btn-default"
+                type="submit"
+              >
+                Sign in
+              </button>
+              
+                      
+            </div>
+            
+                  
+          </form>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</sign-in>
+`;
+
+exports[`Component:  sign in component non manual fb logins Does not initiate auto login if not possible 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message=""
+  showFacebook="false"
+  showManual={[Function Boolean]}
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    
+      
+    
+    
+  
+  </div>
+  
+</sign-in>
+`;
+
+exports[`Component:  sign in component non manual fb logins displays facebook after init 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message=""
+  showFacebook={[Function Boolean]}
+  showManual={[Function Boolean]}
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-facebook"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <a
+            href="javascript:void(0)"
+            id="fb-login"
+          >
+            <img
+              src="../../../images/sign-in-with-facebook.png"
+            />
+          </a>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-manual"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            Don't want to login with Facebook?
+          </p>
+          
+                  
+          
+                  
+          <form
+            action="/signin/authenticate"
+            class="form-group"
+            id="signin"
+            method="post"
+          >
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="username"
+              >
+                Username
+              </label>
+              
+                          
+              <input
+                id="username"
+                name="username"
+                size="25"
+                type="text"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              
+                          
+              <input
+                id="password"
+                name="password"
+                size="25"
+                type="password"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <div
+                class="checkbox"
+              >
+                
+                              
+                <label>
+                  
+                                  
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                  />
+                   Remember me
+                              
+                </label>
+                
+                          
+              </div>
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <button
+                class="btn btn-default"
+                type="submit"
+              >
+                Sign in
+              </button>
+              
+                      
+            </div>
+            
+                  
+          </form>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</sign-in>
+`;
+
+exports[`Component:  sign in component non manual fb logins displays message 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message={[Function String]}
+  showFacebook="false"
+  showManual={[Function Boolean]}
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            A Message!
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-manual"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            Don't want to login with Facebook?
+          </p>
+          
+                  
+          
+                  
+          <form
+            action="/signin/authenticate"
+            class="form-group"
+            id="signin"
+            method="post"
+          >
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="username"
+              >
+                Username
+              </label>
+              
+                          
+              <input
+                id="username"
+                name="username"
+                size="25"
+                type="text"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              
+                          
+              <input
+                id="password"
+                name="password"
+                size="25"
+                type="password"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <div
+                class="checkbox"
+              >
+                
+                              
+                <label>
+                  
+                                  
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                  />
+                   Remember me
+                              
+                </label>
+                
+                          
+              </div>
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <button
+                class="btn btn-default"
+                type="submit"
+              >
+                Sign in
+              </button>
+              
+                      
+            </div>
+            
+                  
+          </form>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</sign-in>
+`;
+
+exports[`Component:  sign in component non manual fb logins initially displays manual only 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message=""
+  showFacebook="false"
+  showManual={[Function Boolean]}
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    
+      
+    
+    <div
+      class="container-fluid"
+      id="sign-in-manual"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            Don't want to login with Facebook?
+          </p>
+          
+                  
+          
+                  
+          <form
+            action="/signin/authenticate"
+            class="form-group"
+            id="signin"
+            method="post"
+          >
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="username"
+              >
+                Username
+              </label>
+              
+                          
+              <input
+                id="username"
+                name="username"
+                size="25"
+                type="text"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              
+                          
+              <input
+                id="password"
+                name="password"
+                size="25"
+                type="password"
+              />
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <div
+                class="checkbox"
+              >
+                
+                              
+                <label>
+                  
+                                  
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                  />
+                   Remember me
+                              
+                </label>
+                
+                          
+              </div>
+              
+                      
+            </div>
+            
+                      
+            <div
+              class="form-group"
+            >
+              
+                          
+              <button
+                class="btn btn-default"
+                type="submit"
+              >
+                Sign in
+              </button>
+              
+                      
+            </div>
+            
+                  
+          </form>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</sign-in>
+`;
+
+exports[`Component:  sign in component non manual fb logins initiates auto login if possible 1`] = `
+<sign-in
+  facebookInit={[Function MockFacebookInit]}
+  facebookLogin={[Function MockFacebookLogin]}
+  message={[Function String]}
+  showFacebook="false"
+  showManual="false"
+  window={[Function MockWindow]}
+>
+  <div
+    class="sign-in"
+  >
+    
+      
+    <div
+      class="container-fluid"
+      id="sign-in-message"
+    >
+      
+          
+      <div
+        class="row text-center"
+      >
+        
+              
+        <div
+          class="col"
+        >
+          
+                  
+          <p>
+            
+          </p>
+          
+              
+        </div>
+        
+          
+      </div>
+      
+      
+    </div>
+    
+      
+    
+    
+      
+    
+    
+  
+  </div>
+  
+</sign-in>
+`;

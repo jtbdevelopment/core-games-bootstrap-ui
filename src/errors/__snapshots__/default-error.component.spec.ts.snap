@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component:  default error component displays error 1`] = `
+<ngbd-modal-content
+  activeModal={[Function MockModal]}
+  playerService={[Function MockPlayerService]}
+>
+  <div
+    class="general-error-dialog"
+    role="dialog"
+  >
+    
+      
+    <div
+      class="modal-header"
+    >
+      
+          
+      <h4
+        class="modal-title"
+      >
+        Sorry!
+      </h4>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-body"
+    >
+      
+          
+      <span
+        class="error-message"
+      >
+        Something has gone wrong, going to try to re-login and reset.
+      </span>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-footer"
+    >
+      
+          
+      <button
+        class="btn btn-info focus close-button"
+      >
+        OK
+          
+      </button>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</ngbd-modal-content>
+`;

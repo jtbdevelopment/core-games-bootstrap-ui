@@ -1,0 +1,791 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component:  invite component invite invites the chosen 1`] = `
+<invite-friends
+  chosen={[Function Array]}
+  config={[Function MockConfig]}
+  facebookInviteService={[Function MockFacebookInviteService]}
+  friendService={[Function MockFriendService]}
+  invitable={[Function Array]}
+  modalRef={[Function MockModal]}
+>
+  <div
+    class="invite-dialog"
+  >
+    
+      
+    <div
+      class="modal-header"
+    >
+      
+          
+      <h3
+        class="modal-title"
+      >
+        Invite Friends to Play
+      </h3>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-body"
+    >
+      
+          
+      <p-multiselect
+        class="ng-untouched ng-pristine ng-valid"
+        datakey="id"
+        maxselectedlabels="30"
+        ng-reflect-data-key="id"
+        ng-reflect-max-selected-labels="30"
+        ng-reflect-model="[object Object],[object Object"
+        ng-reflect-option-label="displayName"
+        ng-reflect-options="[object Object]"
+        optionlabel="displayName"
+      >
+        
+          
+        <div
+          class="ui-multiselect ui-widget ui-state-default ui-corner-all"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <div
+            class="ui-helper-hidden-accessible"
+          >
+            
+                  
+            <input
+              readonly="readonly"
+              type="text"
+            />
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-label-container"
+            title="Choose"
+          >
+            
+                  
+            <label
+              class="ui-multiselect-label ui-corner-all"
+            >
+              Choose
+            </label>
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-trigger ui-state-default ui-corner-right"
+            ng-reflect-ng-class="[object Object]"
+          >
+            
+                  
+            <span
+              class="ui-clickable fa fa-fw fa-caret-down"
+              ng-reflect-klass="ui-clickable"
+              ng-reflect-ng-class="fa fa-fw fa-caret-down"
+            />
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-panel ui-widget ui-widget-content ui-corner-all ui-shadow"
+            ng-reflect-ng-class="ui-multiselect-panel ui-widget"
+            style="display: none;"
+          >
+            
+                  
+            <div
+              class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix"
+              ng-reflect-klass="ui-widget-header ui-corner-all"
+              ng-reflect-ng-class="[object Object]"
+            >
+              
+                      
+              
+              <div
+                class="ui-chkbox ui-widget"
+              >
+                
+                          
+                <div
+                  class="ui-helper-hidden-accessible"
+                >
+                  
+                              
+                  <input
+                    readonly="readonly"
+                    type="checkbox"
+                  />
+                  
+                          
+                </div>
+                
+                          
+                <div
+                  class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                  ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                  ng-reflect-ng-class="[object Object]"
+                >
+                  
+                              
+                  <span
+                    class="ui-chkbox-icon ui-clickable"
+                    ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                    ng-reflect-ng-class="[object Object]"
+                  />
+                  
+                          
+                </div>
+                
+                      
+              </div>
+              
+                      
+              
+              <div
+                class="ui-multiselect-filter-container"
+              >
+                
+                          
+                <input
+                  class="ui-inputtext ui-widget ui-state-default ui-corner-all"
+                  role="textbox"
+                  type="text"
+                />
+                
+                          
+                <span
+                  class="fa fa-fw fa-search"
+                />
+                
+                      
+              </div>
+              
+                      
+              <a
+                class="ui-multiselect-close ui-corner-all"
+                href="#"
+              >
+                
+                          
+                <span
+                  class="fa fa-close"
+                />
+                
+                      
+              </a>
+              
+                  
+            </div>
+            
+                  
+            <div
+              class="ui-multiselect-items-wrapper"
+            >
+              
+                      
+              <ul
+                class="ui-multiselect-items ui-multiselect-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"
+                style="max-height: 200px;"
+              >
+                
+                          
+                
+                <li
+                  class="ui-multiselect-item ui-corner-all"
+                  ng-reflect-klass="ui-multiselect-item ui-corner-"
+                  ng-reflect-ng-class="[object Object]"
+                  style="display: block;"
+                >
+                  
+                              
+                  <div
+                    class="ui-chkbox ui-widget"
+                  >
+                    
+                                  
+                    <div
+                      class="ui-helper-hidden-accessible"
+                    >
+                      
+                                      
+                      <input
+                        aria-label="n1"
+                        readonly="readonly"
+                        type="checkbox"
+                      />
+                      
+                                  
+                    </div>
+                    
+                                  
+                    <div
+                      class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                      ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                      ng-reflect-ng-class="[object Object]"
+                    >
+                      
+                                      
+                      <span
+                        class="ui-chkbox-icon ui-clickable"
+                        ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                        ng-reflect-ng-class="[object Object]"
+                      />
+                      
+                                  
+                    </div>
+                    
+                              
+                  </div>
+                  
+                              
+                  
+                  <label>
+                    n1
+                  </label>
+                  
+                              
+                  
+                  
+                          
+                </li>
+                <li
+                  class="ui-multiselect-item ui-corner-all"
+                  ng-reflect-klass="ui-multiselect-item ui-corner-"
+                  ng-reflect-ng-class="[object Object]"
+                  style="display: block;"
+                >
+                  
+                              
+                  <div
+                    class="ui-chkbox ui-widget"
+                  >
+                    
+                                  
+                    <div
+                      class="ui-helper-hidden-accessible"
+                    >
+                      
+                                      
+                      <input
+                        aria-label="n2"
+                        readonly="readonly"
+                        type="checkbox"
+                      />
+                      
+                                  
+                    </div>
+                    
+                                  
+                    <div
+                      class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                      ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                      ng-reflect-ng-class="[object Object]"
+                    >
+                      
+                                      
+                      <span
+                        class="ui-chkbox-icon ui-clickable"
+                        ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                        ng-reflect-ng-class="[object Object]"
+                      />
+                      
+                                  
+                    </div>
+                    
+                              
+                  </div>
+                  
+                              
+                  
+                  <label>
+                    n2
+                  </label>
+                  
+                              
+                  
+                  
+                          
+                </li>
+                <li
+                  class="ui-multiselect-item ui-corner-all"
+                  ng-reflect-klass="ui-multiselect-item ui-corner-"
+                  ng-reflect-ng-class="[object Object]"
+                  style="display: block;"
+                >
+                  
+                              
+                  <div
+                    class="ui-chkbox ui-widget"
+                  >
+                    
+                                  
+                    <div
+                      class="ui-helper-hidden-accessible"
+                    >
+                      
+                                      
+                      <input
+                        aria-label="x3"
+                        readonly="readonly"
+                        type="checkbox"
+                      />
+                      
+                                  
+                    </div>
+                    
+                                  
+                    <div
+                      class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                      ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                      ng-reflect-ng-class="[object Object]"
+                    >
+                      
+                                      
+                      <span
+                        class="ui-chkbox-icon ui-clickable"
+                        ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                        ng-reflect-ng-class="[object Object]"
+                      />
+                      
+                                  
+                    </div>
+                    
+                              
+                  </div>
+                  
+                              
+                  
+                  <label>
+                    x3
+                  </label>
+                  
+                              
+                  
+                  
+                          
+                </li>
+                
+                      
+              </ul>
+              
+                  
+            </div>
+            
+              
+          </div>
+          
+          
+        </div>
+        
+      
+      </p-multiselect>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-footer"
+    >
+      
+          
+      <button
+        class="btn btn-primary invite-friends"
+      >
+        Invite
+      </button>
+      
+          
+      <button
+        class="btn btn-warning cancel-invite"
+      >
+        Cancel
+      </button>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</invite-friends>
+`;
+
+exports[`Component:  invite component subscribes to friends and updates clear chosen 1`] = `
+<invite-friends
+  chosen={[Function Array]}
+  config={[Function MockConfig]}
+  facebookInviteService={[Function MockFacebookInviteService]}
+  friendService={[Function MockFriendService]}
+  invitable={[Function Array]}
+  modalRef={[Function MockModal]}
+>
+  <div
+    class="invite-dialog"
+  >
+    
+      
+    <div
+      class="modal-header"
+    >
+      
+          
+      <h3
+        class="modal-title"
+      >
+        Invite Friends to Play
+      </h3>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-body"
+    >
+      
+          
+      <p-multiselect
+        class="ng-untouched ng-pristine ng-valid"
+        datakey="id"
+        maxselectedlabels="30"
+        ng-reflect-data-key="id"
+        ng-reflect-max-selected-labels="30"
+        ng-reflect-model=""
+        ng-reflect-option-label="displayName"
+        ng-reflect-options="[object Object]"
+        optionlabel="displayName"
+      >
+        
+          
+        <div
+          class="ui-multiselect ui-widget ui-state-default ui-corner-all"
+          ng-reflect-ng-class="[object Object]"
+        >
+          
+              
+          <div
+            class="ui-helper-hidden-accessible"
+          >
+            
+                  
+            <input
+              readonly="readonly"
+              type="text"
+            />
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-label-container"
+            title="Choose"
+          >
+            
+                  
+            <label
+              class="ui-multiselect-label ui-corner-all"
+            >
+              Choose
+            </label>
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-trigger ui-state-default ui-corner-right"
+            ng-reflect-ng-class="[object Object]"
+          >
+            
+                  
+            <span
+              class="ui-clickable fa fa-fw fa-caret-down"
+              ng-reflect-klass="ui-clickable"
+              ng-reflect-ng-class="fa fa-fw fa-caret-down"
+            />
+            
+              
+          </div>
+          
+              
+          <div
+            class="ui-multiselect-panel ui-widget ui-widget-content ui-corner-all ui-shadow"
+            ng-reflect-ng-class="ui-multiselect-panel ui-widget"
+            style="display: none;"
+          >
+            
+                  
+            <div
+              class="ui-widget-header ui-corner-all ui-multiselect-header ui-helper-clearfix"
+              ng-reflect-klass="ui-widget-header ui-corner-all"
+              ng-reflect-ng-class="[object Object]"
+            >
+              
+                      
+              
+              <div
+                class="ui-chkbox ui-widget"
+              >
+                
+                          
+                <div
+                  class="ui-helper-hidden-accessible"
+                >
+                  
+                              
+                  <input
+                    readonly="readonly"
+                    type="checkbox"
+                  />
+                  
+                          
+                </div>
+                
+                          
+                <div
+                  class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                  ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                  ng-reflect-ng-class="[object Object]"
+                >
+                  
+                              
+                  <span
+                    class="ui-chkbox-icon ui-clickable"
+                    ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                    ng-reflect-ng-class="[object Object]"
+                  />
+                  
+                          
+                </div>
+                
+                      
+              </div>
+              
+                      
+              
+              <div
+                class="ui-multiselect-filter-container"
+              >
+                
+                          
+                <input
+                  class="ui-inputtext ui-widget ui-state-default ui-corner-all"
+                  role="textbox"
+                  type="text"
+                />
+                
+                          
+                <span
+                  class="fa fa-fw fa-search"
+                />
+                
+                      
+              </div>
+              
+                      
+              <a
+                class="ui-multiselect-close ui-corner-all"
+                href="#"
+              >
+                
+                          
+                <span
+                  class="fa fa-close"
+                />
+                
+                      
+              </a>
+              
+                  
+            </div>
+            
+                  
+            <div
+              class="ui-multiselect-items-wrapper"
+            >
+              
+                      
+              <ul
+                class="ui-multiselect-items ui-multiselect-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"
+                style="max-height: 200px;"
+              >
+                
+                          
+                
+                <li
+                  class="ui-multiselect-item ui-corner-all"
+                  ng-reflect-klass="ui-multiselect-item ui-corner-"
+                  ng-reflect-ng-class="[object Object]"
+                  style="display: block;"
+                >
+                  
+                              
+                  <div
+                    class="ui-chkbox ui-widget"
+                  >
+                    
+                                  
+                    <div
+                      class="ui-helper-hidden-accessible"
+                    >
+                      
+                                      
+                      <input
+                        aria-label="n1"
+                        readonly="readonly"
+                        type="checkbox"
+                      />
+                      
+                                  
+                    </div>
+                    
+                                  
+                    <div
+                      class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                      ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                      ng-reflect-ng-class="[object Object]"
+                    >
+                      
+                                      
+                      <span
+                        class="ui-chkbox-icon ui-clickable"
+                        ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                        ng-reflect-ng-class="[object Object]"
+                      />
+                      
+                                  
+                    </div>
+                    
+                              
+                  </div>
+                  
+                              
+                  
+                  <label>
+                    n1
+                  </label>
+                  
+                              
+                  
+                  
+                          
+                </li>
+                <li
+                  class="ui-multiselect-item ui-corner-all"
+                  ng-reflect-klass="ui-multiselect-item ui-corner-"
+                  ng-reflect-ng-class="[object Object]"
+                  style="display: block;"
+                >
+                  
+                              
+                  <div
+                    class="ui-chkbox ui-widget"
+                  >
+                    
+                                  
+                    <div
+                      class="ui-helper-hidden-accessible"
+                    >
+                      
+                                      
+                      <input
+                        aria-label="n2"
+                        readonly="readonly"
+                        type="checkbox"
+                      />
+                      
+                                  
+                    </div>
+                    
+                                  
+                    <div
+                      class="ui-chkbox-box ui-widget ui-corner-all ui-state-default"
+                      ng-reflect-klass="ui-chkbox-box ui-widget ui-cor"
+                      ng-reflect-ng-class="[object Object]"
+                    >
+                      
+                                      
+                      <span
+                        class="ui-chkbox-icon ui-clickable"
+                        ng-reflect-klass="ui-chkbox-icon ui-clickable"
+                        ng-reflect-ng-class="[object Object]"
+                      />
+                      
+                                  
+                    </div>
+                    
+                              
+                  </div>
+                  
+                              
+                  
+                  <label>
+                    n2
+                  </label>
+                  
+                              
+                  
+                  
+                          
+                </li>
+                
+                      
+              </ul>
+              
+                  
+            </div>
+            
+              
+          </div>
+          
+          
+        </div>
+        
+      
+      </p-multiselect>
+      
+      
+    </div>
+    
+      
+    <div
+      class="modal-footer"
+    >
+      
+          
+      <button
+        class="btn btn-primary invite-friends"
+      >
+        Invite
+      </button>
+      
+          
+      <button
+        class="btn btn-warning cancel-invite"
+      >
+        Cancel
+      </button>
+      
+      
+    </div>
+    
+  
+  </div>
+  
+</invite-friends>
+`;
