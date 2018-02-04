@@ -6,25 +6,25 @@ import {MultiSelectModule} from 'primeng/primeng';
 import {FormsModule} from '@angular/forms';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
-export * from './invite.component';
+export {InviteComponent} from './invite.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        NgbModule,
-        FormsModule,
-        MultiSelectModule,
-        JTBCoreGamesUI
-    ],
-    providers: [
-        {provide: 'Window', useValue: window}
-    ],
-    entryComponents: [
-        InviteComponent
-    ],
-    declarations: [
-        InviteComponent
-    ]
+  imports: [
+    BrowserModule,
+    NgbModule,
+    FormsModule,
+    MultiSelectModule,
+    JTBCoreGamesUI
+  ],
+  providers: [
+    {provide: 'Window', useValue: window}
+  ],
+  entryComponents: [
+    InviteComponent
+  ],
+  declarations: [
+    InviteComponent
+  ]
 })
 export class JTBCoreGamesUIBInviteModule {
 }

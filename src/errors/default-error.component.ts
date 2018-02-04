@@ -3,15 +3,15 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {PlayerService} from 'jtb-core-games-ui';
 
 @Component({
-    selector: 'ngbd-modal-content',
-    templateUrl: './default-error.component.html'
+  selector: 'ngbd-modal-content',
+  templateUrl: './default-error.component.html'
 })
 export class DefaultErrorComponent {
-    constructor(private activeModal: NgbActiveModal, private playerService: PlayerService) {
-    }
+  constructor(private activeModal: NgbActiveModal, private playerService: PlayerService) {
+  }
 
-    public dismissAndForceLogout() {
-        this.activeModal.dismiss();
-        this.playerService.forceLogout();
-    }
+  public dismissAndForceLogout() {
+    this.activeModal.dismiss();
+    this.playerService.forceLogout();
+  }
 }

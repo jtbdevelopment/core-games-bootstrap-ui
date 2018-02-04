@@ -4,23 +4,20 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SignInComponent} from './sign-in.component';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
-export * from './sign-in.component';
+export {SignInComponent} from './sign-in.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        NgbModule,
-        JTBCoreGamesUI
-    ],
-    providers: [
-        {provide: 'Window', useValue: window}
-    ],
-    exports: [
-        SignInComponent
-    ],
-    declarations: [
-        SignInComponent
-    ]
+  imports: [
+    BrowserModule,
+    NgbModule,
+    JTBCoreGamesUI
+  ],
+  exports: [
+    SignInComponent
+  ],
+  declarations: [
+    SignInComponent
+  ]
 })
 export class JTBCoreGamesUIBSSignInModule {
 }

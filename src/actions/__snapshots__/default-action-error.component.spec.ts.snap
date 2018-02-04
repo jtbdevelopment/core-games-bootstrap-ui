@@ -10,53 +10,54 @@ exports[`Component:  default action error component displays error message 1`] =
     role="dialog"
   >
     
-      
+    
     <div
       class="modal-header"
     >
       
-          
+      
       <h4
         class="modal-title"
       >
         Sorry!
       </h4>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-body"
     >
       
-          
+      
       <span
         class="error-message"
       >
         Something went wrong!
       </span>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-footer"
     >
       
-          
+      
       <button
         class="btn btn-info focus close-button"
       >
         OK
-          
+      
       </button>
       
-      
+    
     </div>
     
   
   </div>
+  
 </ngbd-modal-content>
 `;

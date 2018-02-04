@@ -4,43 +4,43 @@ import {AdminComponent} from './admin.component';
 import {NgbModule, NgbTabsetConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'admin-stats',
-    template: '<div class="admin-stats">stats</div>'
+  selector: 'admin-stats',
+  template: '<div class="admin-stats">stats</div>'
 })
 export class MockAdminStatsComponent {
-    @Input() playerLoaded: boolean;
+  @Input() playerLoaded: boolean;
 }
 
 @Component({
-    selector: 'admin-switch-player',
-    template: '<div class="admin-switch-player">switch</div>'
+  selector: 'admin-switch-player',
+  template: '<div class="admin-switch-player">switch</div>'
 })
 export class MockAdminSwitchPlayerComponent {
-    @Input() playerLoaded: boolean;
+  @Input() playerLoaded: boolean;
 }
 
 
 describe('admin component', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [
-                NgbModule
-            ],
-            declarations: [
-                AdminComponent,
-                MockAdminStatsComponent,
-                MockAdminSwitchPlayerComponent,
-            ],
-            providers: [
-                NgbTabsetConfig
-            ],
-        });
-        TestBed.compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        NgbModule
+      ],
+      declarations: [
+        AdminComponent,
+        MockAdminStatsComponent,
+        MockAdminSwitchPlayerComponent,
+      ],
+      providers: [
+        NgbTabsetConfig
+      ],
     });
+    TestBed.compileComponents();
+  });
 
-    it('should render basics, switch hidden by tabs', () => {
-        const fixture = TestBed.createComponent(AdminComponent);
-        fixture.detectChanges();
-        expect(fixture).toMatchSnapshot();
-    });
+  it('should render basics, switch hidden by tabs', () => {
+    const fixture = TestBed.createComponent(AdminComponent);
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
 });

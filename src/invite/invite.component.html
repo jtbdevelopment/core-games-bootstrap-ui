@@ -1,18 +1,18 @@
 <div class="invite-dialog">
-    <div class="modal-header">
-        <h3 class="modal-title">Invite Friends to Play</h3>
-    </div>
-    <div class="modal-body">
-        <p-multiSelect [options]="invitable"
-                       dataKey="id"
-                       optionLabel="displayName"
-                       maxSelectedLabels="30"
-                       [(ngModel)]="chosen"
-                       [ngModelOptions]="{standalone: true}">
-        </p-multiSelect>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary invite-friends" (click)="inviteFriends()">Invite</button>
-        <button class="btn btn-warning cancel-invite" (click)="cancel()">Cancel</button>
-    </div>
+  <div class="modal-header">
+    <h3 class="modal-title">Invite Friends to Play</h3>
+  </div>
+  <div class="modal-body">
+    <p-multiSelect [options]="invitable"
+                   dataKey="id"
+                   optionLabel="displayName"
+                   maxSelectedLabels="30"
+                   [(ngModel)]="chosen"
+                   [ngModelOptions]="{standalone: true}">
+    </p-multiSelect>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary invite-friends" (click)="inviteFriends()">Invite</button>
+    <button class="btn btn-warning cancel-invite" (click)="cancel()">Cancel</button>
+  </div>
 </div>

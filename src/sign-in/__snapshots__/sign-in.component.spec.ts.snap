@@ -7,60 +7,59 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
   message=""
   showFacebook={[Function Boolean]}
   showManual={[Function Boolean]}
-  window={[Function MockWindow]}
 >
   <div
     class="sign-in"
   >
     
-      
+    
     <div
       class="container-fluid"
       id="sign-in-message"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             
           </p>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     
     <div
       class="container-fluid"
       id="sign-in-facebook"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <a
             href="javascript:void(0)"
             id="fb-login"
@@ -70,40 +69,40 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
             />
           </a>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     
     <div
       class="container-fluid"
       id="sign-in-manual"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             Don't want to login with Facebook?
           </p>
           
-                  
           
-                  
+          
+          
           <form
             action="/signin/authenticate"
             class="form-group"
@@ -111,19 +110,19 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
             method="post"
           >
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="username"
               >
                 Username
               </label>
               
-                          
+              
               <input
                 id="username"
                 name="username"
@@ -131,22 +130,22 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
                 type="text"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="password"
               >
                 Password
               </label>
               
-                          
+              
               <input
                 id="password"
                 name="password"
@@ -154,44 +153,44 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
                 type="password"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <div
                 class="checkbox"
               >
                 
-                              
+                
                 <label>
                   
-                                  
+                  
                   <input
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
                   />
                    Remember me
-                              
+                
                 </label>
                 
-                          
+              
               </div>
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <button
                 class="btn btn-default"
                 type="submit"
@@ -199,19 +198,19 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
                 Sign in
               </button>
               
-                      
+            
             </div>
             
-                  
+          
           </form>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -227,46 +226,45 @@ exports[`Component:  sign in component non manual fb logins Does not initiate au
   message=""
   showFacebook="false"
   showManual={[Function Boolean]}
-  window={[Function MockWindow]}
 >
   <div
     class="sign-in"
   >
     
-      
+    
     <div
       class="container-fluid"
       id="sign-in-message"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             
           </p>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
     
     
-      
+    
+    
     
     
   
@@ -282,60 +280,59 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
   message=""
   showFacebook={[Function Boolean]}
   showManual={[Function Boolean]}
-  window={[Function MockWindow]}
 >
   <div
     class="sign-in"
   >
     
-      
+    
     <div
       class="container-fluid"
       id="sign-in-message"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             
           </p>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     
     <div
       class="container-fluid"
       id="sign-in-facebook"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <a
             href="javascript:void(0)"
             id="fb-login"
@@ -345,40 +342,40 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
             />
           </a>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     
     <div
       class="container-fluid"
       id="sign-in-manual"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             Don't want to login with Facebook?
           </p>
           
-                  
           
-                  
+          
+          
           <form
             action="/signin/authenticate"
             class="form-group"
@@ -386,19 +383,19 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
             method="post"
           >
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="username"
               >
                 Username
               </label>
               
-                          
+              
               <input
                 id="username"
                 name="username"
@@ -406,22 +403,22 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
                 type="text"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="password"
               >
                 Password
               </label>
               
-                          
+              
               <input
                 id="password"
                 name="password"
@@ -429,44 +426,44 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
                 type="password"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <div
                 class="checkbox"
               >
                 
-                              
+                
                 <label>
                   
-                                  
+                  
                   <input
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
                   />
                    Remember me
-                              
+                
                 </label>
                 
-                          
+              
               </div>
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <button
                 class="btn btn-default"
                 type="submit"
@@ -474,19 +471,19 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
                 Sign in
               </button>
               
-                      
+            
             </div>
             
-                  
+          
           </form>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -502,70 +499,69 @@ exports[`Component:  sign in component non manual fb logins displays message 1`]
   message={[Function String]}
   showFacebook="false"
   showManual={[Function Boolean]}
-  window={[Function MockWindow]}
 >
   <div
     class="sign-in"
   >
     
-      
+    
     <div
       class="container-fluid"
       id="sign-in-message"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             A Message!
           </p>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
     
     
-      
+    
+    
     
     <div
       class="container-fluid"
       id="sign-in-manual"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             Don't want to login with Facebook?
           </p>
           
-                  
           
-                  
+          
+          
           <form
             action="/signin/authenticate"
             class="form-group"
@@ -573,19 +569,19 @@ exports[`Component:  sign in component non manual fb logins displays message 1`]
             method="post"
           >
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="username"
               >
                 Username
               </label>
               
-                          
+              
               <input
                 id="username"
                 name="username"
@@ -593,22 +589,22 @@ exports[`Component:  sign in component non manual fb logins displays message 1`]
                 type="text"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="password"
               >
                 Password
               </label>
               
-                          
+              
               <input
                 id="password"
                 name="password"
@@ -616,44 +612,44 @@ exports[`Component:  sign in component non manual fb logins displays message 1`]
                 type="password"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <div
                 class="checkbox"
               >
                 
-                              
+                
                 <label>
                   
-                                  
+                  
                   <input
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
                   />
                    Remember me
-                              
+                
                 </label>
                 
-                          
+              
               </div>
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <button
                 class="btn btn-default"
                 type="submit"
@@ -661,19 +657,19 @@ exports[`Component:  sign in component non manual fb logins displays message 1`]
                 Sign in
               </button>
               
-                      
+            
             </div>
             
-                  
+          
           </form>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -689,70 +685,69 @@ exports[`Component:  sign in component non manual fb logins initially displays m
   message=""
   showFacebook="false"
   showManual={[Function Boolean]}
-  window={[Function MockWindow]}
 >
   <div
     class="sign-in"
   >
     
-      
+    
     <div
       class="container-fluid"
       id="sign-in-message"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             
           </p>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
     
     
-      
+    
+    
     
     <div
       class="container-fluid"
       id="sign-in-manual"
     >
       
-          
+      
       <div
         class="row text-center"
       >
         
-              
+        
         <div
           class="col"
         >
           
-                  
+          
           <p>
             Don't want to login with Facebook?
           </p>
           
-                  
           
-                  
+          
+          
           <form
             action="/signin/authenticate"
             class="form-group"
@@ -760,19 +755,19 @@ exports[`Component:  sign in component non manual fb logins initially displays m
             method="post"
           >
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="username"
               >
                 Username
               </label>
               
-                          
+              
               <input
                 id="username"
                 name="username"
@@ -780,22 +775,22 @@ exports[`Component:  sign in component non manual fb logins initially displays m
                 type="text"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <label
                 for="password"
               >
                 Password
               </label>
               
-                          
+              
               <input
                 id="password"
                 name="password"
@@ -803,44 +798,44 @@ exports[`Component:  sign in component non manual fb logins initially displays m
                 type="password"
               />
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <div
                 class="checkbox"
               >
                 
-                              
+                
                 <label>
                   
-                                  
+                  
                   <input
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
                   />
                    Remember me
-                              
+                
                 </label>
                 
-                          
+              
               </div>
               
-                      
+            
             </div>
             
-                      
+            
             <div
               class="form-group"
             >
               
-                          
+              
               <button
                 class="btn btn-default"
                 type="submit"
@@ -848,75 +843,20 @@ exports[`Component:  sign in component non manual fb logins initially displays m
                 Sign in
               </button>
               
-                      
+            
             </div>
             
-                  
+          
           </form>
           
-              
+        
         </div>
         
-          
+      
       </div>
       
-      
+    
     </div>
-    
-  
-  </div>
-  
-</sign-in>
-`;
-
-exports[`Component:  sign in component non manual fb logins initiates auto login if possible 1`] = `
-<sign-in
-  facebookInit={[Function MockFacebookInit]}
-  facebookLogin={[Function MockFacebookLogin]}
-  message={[Function String]}
-  showFacebook="false"
-  showManual="false"
-  window={[Function MockWindow]}
->
-  <div
-    class="sign-in"
-  >
-    
-      
-    <div
-      class="container-fluid"
-      id="sign-in-message"
-    >
-      
-          
-      <div
-        class="row text-center"
-      >
-        
-              
-        <div
-          class="col"
-        >
-          
-                  
-          <p>
-            
-          </p>
-          
-              
-        </div>
-        
-          
-      </div>
-      
-      
-    </div>
-    
-      
-    
-    
-      
-    
     
   
   </div>

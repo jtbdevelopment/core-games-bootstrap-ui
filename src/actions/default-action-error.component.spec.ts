@@ -4,36 +4,36 @@ import {DefaultActionErrorComponent} from './default-action-error.component';
 
 
 class MockModal {
-    dismiss = jasmine.createSpy('dismiss');
+  dismiss = jasmine.createSpy('dismiss');
 }
 
 describe('Component:  default action error component', () => {
-    let fixture;
-    let modal;
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                DefaultActionErrorComponent,
-            ],
-            providers: [
-                {provide: NgbActiveModal, useClass: MockModal}
-            ],
-        });
-        TestBed.compileComponents();
-        fixture = TestBed.createComponent(DefaultActionErrorComponent);
-        modal = TestBed.get(NgbActiveModal);
-        fixture.detectChanges();
+  let fixture;
+  let modal;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        DefaultActionErrorComponent,
+      ],
+      providers: [
+        {provide: NgbActiveModal, useClass: MockModal}
+      ],
     });
+    TestBed.compileComponents();
+    fixture = TestBed.createComponent(DefaultActionErrorComponent);
+    modal = TestBed.get(NgbActiveModal);
+    fixture.detectChanges();
+  });
 
-    it('displays error message', () => {
-        fixture.componentInstance.errorMessage = 'Something went wrong!';
-        fixture.detectChanges();
-        expect(fixture).toMatchSnapshot();
-    });
+  it('displays error message', () => {
+    fixture.componentInstance.errorMessage = 'Something went wrong!';
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
 
-    it('cancel modal', () => {
-        expect(modal.dismiss).not.toHaveBeenCalled();
-        fixture.nativeElement.querySelector('.close-button').click();
-        expect(modal.dismiss).toHaveBeenCalled();
-    });
+  it('cancel modal', () => {
+    expect(modal.dismiss).not.toHaveBeenCalled();
+    fixture.nativeElement.querySelector('.close-button').click();
+    expect(modal.dismiss).toHaveBeenCalled();
+  });
 });

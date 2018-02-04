@@ -5,27 +5,28 @@ import {VersionService} from './version.service';
 import {DefaultVersionNotesComponent} from './default-version-notes.component';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
-export * from './version.service';
+export {VersionService} from './version.service';
+export {DefaultVersionNotesComponent} from './default-version-notes.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        NgbModule,
-        JTBCoreGamesUI
-    ],
-    providers: [
-        VersionService
-    ],
-    entryComponents: [
-        DefaultVersionNotesComponent
-    ],
-    declarations: [
-        DefaultVersionNotesComponent
-    ]
+  imports: [
+    BrowserModule,
+    NgbModule,
+    JTBCoreGamesUI
+  ],
+  providers: [
+    VersionService
+  ],
+  entryComponents: [
+    DefaultVersionNotesComponent
+  ],
+  declarations: [
+    DefaultVersionNotesComponent
+  ]
 })
 export class JTBCoreGamesUIBSVersionNotesModule {
-    // noinspection JSUnusedLocalSymbols
-    constructor(private versionService: VersionService) {
-    }
+  // noinspection JSUnusedLocalSymbols
+  constructor(private versionService: VersionService) {
+  }
 }
 

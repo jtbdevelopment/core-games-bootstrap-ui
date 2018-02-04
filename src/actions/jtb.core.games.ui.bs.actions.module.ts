@@ -10,33 +10,36 @@ import {BootstrapRerouteService} from './bootstrap-reroute.service';
 import {HttpClientModule} from '@angular/common/http';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
-export * from './bootstrap-actions.service';
+export {BootstrapActionsService} from './bootstrap-actions.service';
+export {DefaultActionConfirmComponent} from './default-action-confirm.component';
+export {DefaultActionErrorComponent} from './default-action-error.component';
+export {BootstrapRerouteService} from './bootstrap-reroute.service';
 
 @NgModule({
-    imports: [
-        HttpClientModule,
-        BrowserModule,
-        NgbModule,
-        FormsModule,
-        JTBCoreGamesUI,
-        JTBCoreGamesUIBSAdsModule
-    ],
-    providers: [
-        BootstrapActionsService,
-        BootstrapRerouteService
-    ],
-    entryComponents: [
-        DefaultActionConfirmComponent,
-        DefaultActionErrorComponent
-    ],
-    declarations: [
-        DefaultActionConfirmComponent,
-        DefaultActionErrorComponent
-    ]
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    NgbModule,
+    FormsModule,
+    JTBCoreGamesUI,
+    JTBCoreGamesUIBSAdsModule
+  ],
+  providers: [
+    BootstrapActionsService,
+    BootstrapRerouteService
+  ],
+  entryComponents: [
+    DefaultActionConfirmComponent,
+    DefaultActionErrorComponent
+  ],
+  declarations: [
+    DefaultActionConfirmComponent,
+    DefaultActionErrorComponent
+  ]
 })
 export class JTBCoreGamesUIBSActionsModule {
-    // noinspection JSUnusedLocalSymbols
-    constructor(private reroute: BootstrapRerouteService) {
+  // noinspection JSUnusedLocalSymbols
+  constructor(private reroute: BootstrapRerouteService) {
 
-    }
+  }
 }

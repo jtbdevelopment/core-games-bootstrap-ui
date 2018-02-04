@@ -13,27 +13,27 @@ exports[`Component:  invite component invite invites the chosen 1`] = `
     class="invite-dialog"
   >
     
-      
+    
     <div
       class="modal-header"
     >
       
-          
+      
       <h3
         class="modal-title"
       >
         Invite Friends to Play
       </h3>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-body"
     >
       
-          
+      
       <p-multiselect
         class="ng-untouched ng-pristine ng-valid"
         datakey="id"
@@ -393,29 +393,29 @@ exports[`Component:  invite component invite invites the chosen 1`] = `
       
       </p-multiselect>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-footer"
     >
       
-          
+      
       <button
         class="btn btn-primary invite-friends"
       >
         Invite
       </button>
       
-          
+      
       <button
         class="btn btn-warning cancel-invite"
       >
         Cancel
       </button>
       
-      
+    
     </div>
     
   
@@ -437,27 +437,27 @@ exports[`Component:  invite component subscribes to friends and updates clear ch
     class="invite-dialog"
   >
     
-      
+    
     <div
       class="modal-header"
     >
       
-          
+      
       <h3
         class="modal-title"
       >
         Invite Friends to Play
       </h3>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-body"
     >
       
-          
+      
       <p-multiselect
         class="ng-untouched ng-pristine ng-valid"
         datakey="id"
@@ -759,29 +759,29 @@ exports[`Component:  invite component subscribes to friends and updates clear ch
       
       </p-multiselect>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="modal-footer"
     >
       
-          
+      
       <button
         class="btn btn-primary invite-friends"
       >
         Invite
       </button>
       
-          
+      
       <button
         class="btn btn-warning cancel-invite"
       >
         Cancel
       </button>
       
-      
+    
     </div>
     
   

@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'admin-screen',
-    templateUrl: './admin.component.html',
-    styleUrls: ['./admin.component.scss']
+  selector: 'admin-screen',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
 

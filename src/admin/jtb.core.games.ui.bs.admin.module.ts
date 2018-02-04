@@ -8,24 +8,26 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {JTBCoreGamesUI} from 'jtb-core-games-ui';
 
-export * from './admin.component';
+export {AdminComponent} from './admin.component';
+export {AdminStatsComponent} from './admin-stats.component';
+export {AdminSwitchPlayerComponent} from './admin-switch-player.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        NgbModule,
-        FormsModule,
-        HttpClientModule,
-        JTBCoreGamesUI
-    ],
-    exports: [
-        AdminComponent
-    ],
-    declarations: [
-        AdminComponent,
-        AdminStatsComponent,
-        AdminSwitchPlayerComponent
-    ]
+  imports: [
+    BrowserModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    JTBCoreGamesUI
+  ],
+  exports: [
+    AdminComponent
+  ],
+  declarations: [
+    AdminComponent,
+    AdminStatsComponent,
+    AdminSwitchPlayerComponent
+  ]
 })
 export class JTBCoreGamesUIBSAdminModule {
 }

@@ -1,45 +1,45 @@
 <div class="sign-in">
-    <div id="sign-in-message" class="container-fluid">
-        <div class="row text-center">
-            <div class="col">
-                <p>{{message}}</p>
-            </div>
-        </div>
+  <div id="sign-in-message" class="container-fluid">
+    <div class="row text-center">
+      <div class="col">
+        <p>{{message}}</p>
+      </div>
     </div>
-    <div id="sign-in-facebook" class="container-fluid" *ngIf="showFacebook">
-        <div class="row text-center">
-            <div class="col">
-                <a href="javascript:void(0)" id="fb-login" (click)="fbLogin()"><img
-                        src="../../../images/sign-in-with-facebook.png"/></a>
-            </div>
-        </div>
+  </div>
+  <div id="sign-in-facebook" class="container-fluid" *ngIf="showFacebook">
+    <div class="row text-center">
+      <div class="col">
+        <a href="javascript:void(0)" id="fb-login" (click)="fbLogin()"><img
+          src="../../../images/sign-in-with-facebook.png"/></a>
+      </div>
     </div>
-    <div id="sign-in-manual" class="container-fluid" *ngIf="showManual">
-        <div class="row text-center">
-            <div class="col">
-                <p>Don't want to login with Facebook?</p>
-                <!--suppress HtmlUnknownTarget -->
-                <form id="signin" action="/signin/authenticate" method="post" class="form-group">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input id="username" name="username" type="text" size="25"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input id="password" name="password" type="password" size="25"/>
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="remember-me" name="remember-me"> Remember me
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-default">Sign in</button>
-                    </div>
-                </form>
+  </div>
+  <div id="sign-in-manual" class="container-fluid" *ngIf="showManual">
+    <div class="row text-center">
+      <div class="col">
+        <p>Don't want to login with Facebook?</p>
+        <!--suppress HtmlUnknownTarget -->
+        <form id="signin" action="/signin/authenticate" method="post" class="form-group">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" size="25"/>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" size="25"/>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="remember-me" name="remember-me"> Remember me
+              </label>
             </div>
-        </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">Sign in</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

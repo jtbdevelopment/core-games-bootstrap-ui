@@ -18,65 +18,65 @@ exports[`admin switch player component it after initial page of users loaded can
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
           disabled=""
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are yourself.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model=""
@@ -84,189 +84,189 @@ exports[`admin switch player component it after initial page of users loaded can
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             <tr>
               
-                      
+            
               <td>
                 dn7
               </td>
               
-                      
+            
               <td>
                 id7
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id7"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn8
               </td>
               
-                      
+            
               <td>
                 id8
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id8"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn9
               </td>
               
-                      
+            
               <td>
                 id9
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id9"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn0
               </td>
               
-                      
+            
               <td>
                 id0
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id0"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="45"
           ng-reflect-direction-links="false"
@@ -377,10 +377,10 @@ exports[`admin switch player component it after initial page of users loaded can
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -407,65 +407,65 @@ exports[`admin switch player component it after initial page of users loaded can
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
           disabled=""
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are yourself.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model="dn7"
@@ -473,102 +473,102 @@ exports[`admin switch player component it after initial page of users loaded can
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             <tr>
               
-                      
+            
               <td>
                 dn7
               </td>
               
-                      
+            
               <td>
                 id7
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id7"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="1"
           ng-reflect-direction-links="false"
@@ -633,10 +633,10 @@ exports[`admin switch player component it after initial page of users loaded can
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -663,65 +663,65 @@ exports[`admin switch player component it after initial page of users loaded doe
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
           disabled=""
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are yourself.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model=""
@@ -729,189 +729,189 @@ exports[`admin switch player component it after initial page of users loaded doe
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             <tr>
               
-                      
+            
               <td>
                 dn1
               </td>
               
-                      
+            
               <td>
                 id1
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id1"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn2
               </td>
               
-                      
+            
               <td>
                 id2
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id2"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id3
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id3"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id4
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id4"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="40"
           ng-reflect-direction-links="false"
@@ -999,10 +999,10 @@ exports[`admin switch player component it after initial page of users loaded doe
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -1029,65 +1029,65 @@ exports[`admin switch player component it after initial page of users loaded rev
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
           disabled=""
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are yourself.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model=""
@@ -1095,189 +1095,189 @@ exports[`admin switch player component it after initial page of users loaded rev
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             <tr>
               
-                      
+            
               <td>
                 dn1
               </td>
               
-                      
+            
               <td>
                 id1
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id1"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn2
               </td>
               
-                      
+            
               <td>
                 id2
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id2"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id3
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id3"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id4
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id4"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="40"
           ng-reflect-direction-links="false"
@@ -1365,10 +1365,10 @@ exports[`admin switch player component it after initial page of users loaded rev
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -1395,64 +1395,64 @@ exports[`admin switch player component it after initial page of users loaded swi
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are simulating another player.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model=""
@@ -1460,189 +1460,189 @@ exports[`admin switch player component it after initial page of users loaded swi
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             <tr>
               
-                      
+            
               <td>
                 dn1
               </td>
               
-                      
+            
               <td>
                 id1
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id1"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn2
               </td>
               
-                      
+            
               <td>
                 id2
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id2"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id3
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id3"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             <tr>
               
-                      
+            
               <td>
                 dn4
               </td>
               
-                      
+            
               <td>
                 id4
               </td>
               
-                      
+            
               <td>
                 
-                          
+              
                 <button
                   class="btn btn-danger btn-danger btn-change-user"
                   id="id4"
                 >
                   Switch to this user..
-                          
+              
                 </button>
                 
-                      
+            
               </td>
               
-                  
+          
             </tr>
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="40"
           ng-reflect-direction-links="false"
@@ -1730,10 +1730,10 @@ exports[`admin switch player component it after initial page of users loaded swi
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   
@@ -1760,65 +1760,65 @@ exports[`admin switch player component should render results from http 1`] = `
     class="admin-user"
   >
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-secondary btn-success btn-stop-simulating"
           disabled=""
         >
           Stop
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         You are yourself.
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col-4"
       >
         
-              
+        
         <button
           class="btn btn-default focus btn-primary btn-get-users"
         >
           Get Users
-              
+        
         </button>
         
-          
+      
       </div>
       
-          
+      
       <div
         class="col-8"
       >
         
-              
+        
         <input
           class="form-control ng-untouched ng-pristine ng-valid"
           ng-reflect-model=""
@@ -1826,73 +1826,73 @@ exports[`admin switch player component should render results from http 1`] = `
           type="text"
         />
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <table
           class="table table-striped table-sm table-admin-users"
         >
           
-                  
+          
           <tbody>
             <tr>
               
-                      
+            
               <th>
                 Display Name
               </th>
               
-                      
+            
               <th>
                 ID
               </th>
               
-                      
+            
               <th>
                 Switch
               </th>
               
-                  
+          
             </tr>
             
-                  
+          
             
             
-              
+        
           </tbody>
         </table>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
-      
+    
     <div
       class="row"
     >
       
-          
+      
       <div
         class="col"
       >
         
-              
+        
         <ngb-pagination
           ng-reflect-collection-size="0"
           ng-reflect-direction-links="false"
@@ -1929,10 +1929,10 @@ exports[`admin switch player component should render results from http 1`] = `
     
         </ngb-pagination>
         
-          
+      
       </div>
       
-      
+    
     </div>
     
   

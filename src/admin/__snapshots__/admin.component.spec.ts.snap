@@ -6,7 +6,7 @@ exports[`admin component should render basics, switch hidden by tabs 1`] = `
     class="admin-screen"
   >
     
-      
+    
     <ngb-tabset
       ng-reflect-type="pills"
       type="pills"
@@ -90,7 +90,7 @@ exports[`admin component should render basics, switch hidden by tabs 1`] = `
             
           
           
-                  
+          
           <admin-stats>
             <div
               class="admin-stats"
@@ -99,7 +99,7 @@ exports[`admin component should render basics, switch hidden by tabs 1`] = `
             </div>
           </admin-stats>
           
-              
+        
           
           
         </div>
@@ -119,5 +119,6 @@ exports[`admin component should render basics, switch hidden by tabs 1`] = `
     
   
   </div>
+  
 </admin-screen>
 `;
