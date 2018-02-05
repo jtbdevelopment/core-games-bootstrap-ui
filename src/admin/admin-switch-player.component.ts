@@ -7,14 +7,14 @@ import {Player, PlayerService} from 'jtb-core-games-ui';
   templateUrl: './admin-switch-player.component.html',
 })
 export class AdminSwitchPlayerComponent {
-  public revertText: string = '';
-  public revertEnabled: boolean = false;
-  public searchText: string = '';
+  public revertText = '';
+  public revertEnabled = false;
+  public searchText = '';
   public players: Player[] = [];
 
-  public pageSize: number = 20;
-  public totalPlayers: number = 0;
-  public currentPage: number = 1;
+  public pageSize = 20;
+  public totalPlayers = 0;
+  public currentPage = 1;
 
   private player: Player;
   private loggedInPlayer: Player;
@@ -60,7 +60,7 @@ export class AdminSwitchPlayerComponent {
 //noinspection TypeScriptUnresolvedVariable
     this.totalPlayers = json.totalElements;
     // controller.numberOfPages = response.totalPages;
-    let newPlayers = [];
+    const newPlayers = [];
     json.content.forEach(p => {
       newPlayers.push(new Player(p));
     });

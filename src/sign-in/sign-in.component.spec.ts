@@ -19,10 +19,6 @@ class MockFacebookInit {
   });
 }
 
-class MockLocation {
-  public href: string = '';
-}
-
 declare let window: any;
 
 describe('Component:  sign in component', () => {

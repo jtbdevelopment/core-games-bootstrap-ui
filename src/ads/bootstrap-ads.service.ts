@@ -15,7 +15,7 @@ export class BootstrapAdsService {
   public showAdPopup(): Promise<any> {
     let _resolve: (reason?: any) => void;
     let _reject: (reason?: any) => void;
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       _reject = reject;
       _resolve = resolve;
     });

@@ -8,9 +8,9 @@ declare let window: any;
   templateUrl: './sign-in.component.html',
 })
 export class SignInComponent {
-  public message: string = '';
-  public showManual: boolean = false;
-  public showFacebook: boolean = false;
+  public message = '';
+  public showManual = false;
+  public showFacebook = false;
 
   constructor(private facebookLogin: FacebookLoginService,
               private facebookInit: FacebookInitializerService) {

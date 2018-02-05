@@ -5,10 +5,10 @@ import {MessageBusService} from 'jtb-core-games-ui';
 
 @Injectable()
 export class BootstrapErrorListenerService {
-  public listenToSessionErrors: boolean = true;
-  public listenToGeneralErrors: boolean = true;
+  public listenToSessionErrors = true;
+  public listenToGeneralErrors = true;
 
-  constructor(private messageBus: MessageBusService, private modalService: NgbModal) {
+  constructor(private messageBus: MessageBusService, modalService: NgbModal) {
     this.messageBus.invalidSessionError.subscribe(() => {
       if (this.listenToSessionErrors) {
         modalService.open(DefaultErrorComponent);

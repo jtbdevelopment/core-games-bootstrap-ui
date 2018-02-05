@@ -10,18 +10,18 @@ import {
   Injectable,
   Injector
 } from '@angular/core';
-import {JTBModalBackdrop} from './bootstrap-backdrop.component';
+import {JTBModalBackdropComponent} from './bootstrap-backdrop.component';
 
 @Injectable()
 export class BootstrapBackdropService {
-  private _backdropFactory: ComponentFactory<JTBModalBackdrop>;
+  private _backdropFactory: ComponentFactory<JTBModalBackdropComponent>;
   private _backdropCount = 1;
-  private _backdrop: ComponentRef<JTBModalBackdrop>;
+  private _backdrop: ComponentRef<JTBModalBackdropComponent>;
 
   constructor(private _applicationRef: ApplicationRef,
               private _injector: Injector,
-              private _componentFactoryResolver: ComponentFactoryResolver) {
-    this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(JTBModalBackdrop);
+              _componentFactoryResolver: ComponentFactoryResolver) {
+    this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(JTBModalBackdropComponent);
   }
 
   public addBackdrop(): void {

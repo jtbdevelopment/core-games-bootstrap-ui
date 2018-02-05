@@ -39,7 +39,7 @@ export {BootstrapRerouteService} from './bootstrap-reroute.service';
 })
 export class JTBCoreGamesUIBSActionsModule {
   // noinspection JSUnusedLocalSymbols
-  constructor(private reroute: BootstrapRerouteService) {
+  constructor(reroute: BootstrapRerouteService) {
 
   }
 }

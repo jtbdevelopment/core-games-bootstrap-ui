@@ -1,8 +1,6 @@
 import {fakeAsync, TestBed} from '@angular/core/testing';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AdminStatsComponent} from './admin-stats.component';
-import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {HttpRequest} from '@angular/common/http';
 
@@ -17,12 +15,7 @@ describe('admin stats component', () => {
       ],
       declarations: [
         AdminStatsComponent
-      ],
-      providers: [
-        {provide: ConnectionBackend, useClass: MockBackend},
-        {provide: RequestOptions, useClass: BaseRequestOptions},
-        Http
-      ],
+      ]
     });
     TestBed.compileComponents();
     httpMock = TestBed.get(HttpTestingController);
@@ -33,8 +26,8 @@ describe('admin stats component', () => {
   });
 
   it('should render results from http', fakeAsync(() => {
-    let now: number = Math.floor((new Date()).getTime() / 1000);
-    let approxTimes: number[] = [
+    const now: number = Math.floor((new Date()).getTime() / 1000);
+    const approxTimes: number[] = [
       Math.floor((now - 86400) / 100),
       Math.floor((now - (86400 * 7)) / 100),
       Math.floor((now - (86400 * 30)) / 100)

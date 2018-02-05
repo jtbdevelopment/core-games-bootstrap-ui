@@ -1,12 +1,12 @@
-import {JTBModalBackdrop} from './bootstrap-backdrop.component';
+import {JTBModalBackdropComponent} from './bootstrap-backdrop.component';
 import {NgModule} from '@angular/core';
 import {BootstrapBackdropService} from './bootstrap-backdrop.service';
 import {TestBed} from '@angular/core/testing';
 
 @NgModule({
-  declarations: [JTBModalBackdrop],
+  declarations: [JTBModalBackdropComponent],
   entryComponents: [
-    JTBModalBackdrop,
+    JTBModalBackdropComponent,
   ]
 })
 class TestModule {

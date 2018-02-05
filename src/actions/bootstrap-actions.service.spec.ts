@@ -15,8 +15,8 @@ import {GameCacheService, GameFactory, MultiPlayerGame} from 'jtb-core-games-ui'
   template: '<p class="error">{{errorMessage}}</p><p class="confirm">{{confirmMessage}}</p>'
 })
 export class MockReplacementComponent {
-  @Input() errorMessage: string = '';
-  @Input() confirmMessage: string = '';
+  @Input() errorMessage = '';
+  @Input() confirmMessage = '';
 }
 
 class MockGameCacheService {
@@ -68,6 +68,7 @@ class MockModalRef {
 class MockModalService {
   public lastStub: MockModalRef;
 
+  // noinspection JSUnusedGlobalSymbols
   public open(component: any): MockModalRef {
     this.lastStub = new MockModalRef();
     this.lastStub.component = component;
@@ -127,37 +128,37 @@ describe('Service: bootstrap actions service', () => {
   });
 
   it('game url', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({id: 'myId'});
+    const game: MultiPlayerGame = new MultiPlayerGame({id: 'myId'});
     expect(actionService.gameURL(game)).toEqual('/api/player/game/myId/');
   });
 
   it('game action with no body', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'noBody'});
-    let put = actionService.gameAction(game, 'test');
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'noBody'});
+    const put = actionService.gameAction(game, 'test');
     put.subscribe(() => {
       //
     });
 
-    let request = httpMock.expectOne('/api/player/game/noBody/test');
+    const request = httpMock.expectOne('/api/player/game/noBody/test');
     expect(request.request.method).toEqual('PUT');
     expect(request.request.body).toBeNull();
   });
 
   it('game action with body', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'body'});
-    let body = {flag: false, otherOption: 'value'};
-    let put = actionService.gameAction(game, 'testBody', body);
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'body'});
+    const body = {flag: false, otherOption: 'value'};
+    const put = actionService.gameAction(game, 'testBody', body);
     put.subscribe(() => {
       //
     });
 
-    let request = httpMock.expectOne('/api/player/game/body/testBody');
+    const request = httpMock.expectOne('/api/player/game/body/testBody');
     expect(request.request.method).toEqual('PUT');
     expect(request.request.body).toEqual(body);
   });
 
   describe('simple accept actions with ads with success', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
     let action: string;
 
     afterEach(fakeAsync(() => {
@@ -165,11 +166,11 @@ describe('Service: bootstrap actions service', () => {
       ads.resolve();
       tick();
 
-      let request = httpMock.expectOne('/api/player/game/successGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/successGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
-      let gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
+      const gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
       request.flush(gameResponse);
       expect(gameCache.putGame).toHaveBeenCalledWith(gameResponse);
       httpMock.verify();
@@ -183,7 +184,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('rematch game with ads with success', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
     let action: string;
 
     afterEach(fakeAsync(() => {
@@ -191,11 +192,11 @@ describe('Service: bootstrap actions service', () => {
       ads.resolve();
       tick();
 
-      let request = httpMock.expectOne('/api/player/game/successGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/successGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
-      let gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
+      const gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
       request.flush(gameResponse);
 
       expect(gameCache.putGame).toHaveBeenCalledWith(gameResponse);
@@ -218,11 +219,11 @@ describe('Service: bootstrap actions service', () => {
       ads.resolve();
       tick();
 
-      let request = httpMock.expectOne('/api/player/new');
+      const request = httpMock.expectOne('/api/player/new');
       expect(request.request.method).toEqual('POST');
       expect(request.request.body).toEqual(options);
 
-      let gameResponse = new MultiPlayerGame({id: 'newGame', gamePhase: 'newPhase'});
+      const gameResponse = new MultiPlayerGame({id: 'newGame', gamePhase: 'newPhase'});
       request.flush(gameResponse);
 
       expect(gameCache.putGame).toHaveBeenCalledWith(gameResponse);
@@ -237,7 +238,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('simple accept actions with failure', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
     let action: string;
 
     afterEach(fakeAsync(() => {
@@ -245,7 +246,7 @@ describe('Service: bootstrap actions service', () => {
       ads.resolve();
       tick();
 
-      let request = httpMock.expectOne('/api/player/game/failureGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/failureGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
@@ -267,7 +268,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('rematch game with failure', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
     let action: string;
 
     afterEach(fakeAsync(() => {
@@ -275,7 +276,7 @@ describe('Service: bootstrap actions service', () => {
       ads.resolve();
       tick();
 
-      let request = httpMock.expectOne('/api/player/game/failureGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/failureGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
@@ -299,7 +300,7 @@ describe('Service: bootstrap actions service', () => {
     });
   });
   describe('simple accept with failure and custom error', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'failureGame'});
     let action: string;
 
     beforeEach(() => {
@@ -310,7 +311,7 @@ describe('Service: bootstrap actions service', () => {
       expect(ads.lastPromise).toBeDefined();
       ads.resolve();
       tick();
-      let request = httpMock.expectOne('/api/player/game/failureGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/failureGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
@@ -333,7 +334,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('confirming actions with success', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
     let action: string;
     let confirmMessage: string;
 
@@ -345,8 +346,8 @@ describe('Service: bootstrap actions service', () => {
       modalService.lastStub.close();
       tick();
 
-      let gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
-      let request = httpMock.expectOne('/api/player/game/successGame/' + action);
+      const gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
+      const request = httpMock.expectOne('/api/player/game/successGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
@@ -376,7 +377,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('confirming actions with error', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'failGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'failGame'});
     let action: string;
     let confirmMessage: string;
 
@@ -388,7 +389,7 @@ describe('Service: bootstrap actions service', () => {
       modalService.lastStub.close();
       tick();
 
-      let request = httpMock.expectOne('/api/player/game/failGame/' + action);
+      const request = httpMock.expectOne('/api/player/game/failGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 
@@ -424,7 +425,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('cancelling actions with success', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
     let action: string;
     let confirmMessage: string;
 
@@ -460,7 +461,7 @@ describe('Service: bootstrap actions service', () => {
   });
 
   describe('confirming actions with custom confirm', () => {
-    let game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
+    const game: MultiPlayerGame = new MultiPlayerGame({'id': 'successGame'});
     let action: string;
     let confirmMessage: string;
 
@@ -476,8 +477,8 @@ describe('Service: bootstrap actions service', () => {
       modalService.lastStub.close();
       tick();
 
-      let gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
-      let request = httpMock.expectOne('/api/player/game/successGame/' + action);
+      const gameResponse = new MultiPlayerGame({id: 'successGame2', gamePhase: 'aPhase'});
+      const request = httpMock.expectOne('/api/player/game/successGame/' + action);
       expect(request.request.method).toEqual('PUT');
       expect(request.request.body).toBeNull();
 

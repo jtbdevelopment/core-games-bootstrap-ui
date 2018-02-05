@@ -1,18 +1,17 @@
 import {TestBed} from '@angular/core/testing';
-import {JTBModalBackdrop} from './bootstrap-backdrop.component';
+import {JTBModalBackdropComponent} from './bootstrap-backdrop.component';
 
 
 describe('Component:  bootstrap backdrop component', () => {
   let fixture;
-  let modal;
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        JTBModalBackdrop,
+        JTBModalBackdropComponent,
       ],
     });
     TestBed.compileComponents();
-    fixture = TestBed.createComponent(JTBModalBackdrop);
+    fixture = TestBed.createComponent(JTBModalBackdropComponent);
     fixture.detectChanges();
   });
 

@@ -27,7 +27,7 @@ export {JTBCoreGamesUIBSAdsModule, BootstrapAdsService} from './ads/jtb.core.gam
 export {
   JTBCoreGamesUIBSBackdropModule,
   BootstrapBackdropService,
-  JTBModalBackdrop
+  JTBModalBackdropComponent
 } from './backdrop/jtb.core.games.ui.bs.backdrop.module';
 export {
   JTBCoreGamesUIBSErrorsModule,

@@ -10,7 +10,7 @@ class MockGameCacheService {
   public observables: Map<string, Subject<Game>> = new Map<string, Subject<Game>>();
 
   public getGame(id: string): Observable<Game> {
-    let s = new Subject<Game>();
+    const s = new Subject<Game>();
     this.observables.set(id, s);
     return from(s);
   }

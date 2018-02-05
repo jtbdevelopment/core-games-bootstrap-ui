@@ -8,8 +8,8 @@ import {Game, GameCacheService} from 'jtb-core-games-ui';
 export class BootstrapRerouteService {
   public enabled: Boolean = true;
 
-  private currentGameID: string = '';
-  private currentLocation: string = '';
+  private currentGameID = '';
+  private currentLocation = '';
   private currentGameSubscription: Observable<Game>;
 
   constructor(private router: Router, private gameCache: GameCacheService) {
@@ -23,7 +23,7 @@ export class BootstrapRerouteService {
   private handleNavigation(event: NavigationEnd): void {
     this.updateCurrentURLFromEvent(event);
     if (this.currentLocation.indexOf('/game') === 0) {
-      let id = this.getGameIdFromURL();
+      const id = this.getGameIdFromURL();
       if (id !== this.currentGameID) {
         this.closeCurrentListen();
         this.startListeningForGameID(id);
@@ -42,7 +42,7 @@ export class BootstrapRerouteService {
   }
 
   private getGameIdFromURL(): string {
-    let parts = this.currentLocation.split('/');
+    const parts = this.currentLocation.split('/');
     return parts[parts.length - 1];
   }
 
@@ -59,7 +59,7 @@ export class BootstrapRerouteService {
     this.currentGameSubscription = this.gameCache.getGame(id);
     this.currentGameSubscription.subscribe((game) => {
       if (game.id === this.currentGameID) {
-        let expectedURL = game.standardLink();
+        const expectedURL = game.standardLink();
         if (expectedURL !== this.currentLocation) {
           this.router.navigateByUrl(expectedURL);
         }

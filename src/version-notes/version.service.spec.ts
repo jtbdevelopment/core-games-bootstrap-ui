@@ -8,11 +8,11 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {AppConfig, Player, PlayerService} from 'jtb-core-games-ui';
 
 class MockConfig implements AppConfig {
-  releaseNotes: string = '';
-  hoverMenu: boolean = false;
-  appName: string = '';
-  version: string = '1.3.1';
-  inviteFriendsMessage: string = '';
+  releaseNotes = '';
+  hoverMenu = false;
+  appName = '';
+  version = '1.3.1';
+  inviteFriendsMessage = '';
 }
 
 @Component({
@@ -61,7 +61,7 @@ describe('Service: version service', () => {
   });
 
   it('does not display when version matches', () => {
-    let p = new Player();
+    const p = new Player();
     p.lastVersionNotes = '1.3.1';
     expect(modalService.open).not.toHaveBeenCalled();
     playerService.loggedInPlayer.next(p);
@@ -71,35 +71,35 @@ describe('Service: version service', () => {
   describe('expect to be updated', () => {
     afterEach(() => {
       expect(modalService.open).toHaveBeenCalledWith(DefaultVersionNotesComponent);
-      let request = httpMock.expectOne('/api/player/lastVersionNotes/1.3.1');
+      const request = httpMock.expectOne('/api/player/lastVersionNotes/1.3.1');
       expect(request.request.method).toEqual('POST');
       expect(request.request.body).toEqual('');
       request.flush('');
     });
 
     it('does display when version is minor patch', () => {
-      let p = new Player();
+      const p = new Player();
       p.lastVersionNotes = '1.3.0';
       expect(modalService.open).not.toHaveBeenCalled();
       playerService.loggedInPlayer.next(p);
     });
 
     it('does display when version is minor patch from unpatched', () => {
-      let p = new Player();
+      const p = new Player();
       p.lastVersionNotes = '1.3';
       expect(modalService.open).not.toHaveBeenCalled();
       playerService.loggedInPlayer.next(p);
     });
 
     it('does display when version is minor upgrade', () => {
-      let p = new Player();
+      const p = new Player();
       p.lastVersionNotes = '1.2.1';
       expect(modalService.open).not.toHaveBeenCalled();
       playerService.loggedInPlayer.next(p);
     });
 
     it('does display when version is major upgrade', () => {
-      let p = new Player();
+      const p = new Player();
       p.lastVersionNotes = '0.3.1';
       expect(modalService.open).not.toHaveBeenCalled();
       playerService.loggedInPlayer.next(p);
@@ -113,14 +113,14 @@ describe('Service: version service', () => {
 
     afterEach(() => {
       expect(modalService.open).toHaveBeenCalledWith(MockReplacementComponent);
-      let request = httpMock.expectOne('/api/player/lastVersionNotes/1.3.1');
+      const request = httpMock.expectOne('/api/player/lastVersionNotes/1.3.1');
       expect(request.request.method).toEqual('POST');
       expect(request.request.body).toEqual('');
       request.flush('');
     });
 
     it('does display when version is minor patch', () => {
-      let p = new Player();
+      const p = new Player();
       p.lastVersionNotes = '1.3.0';
       expect(modalService.open).not.toHaveBeenCalled();
       playerService.loggedInPlayer.next(p);

@@ -26,7 +26,7 @@ export class VersionService {
   }
 
   private displayVersionNotes(lastVersionForPlayer: string): void {
-    let display = this.playerNeedsToSeeNotes(lastVersionForPlayer);
+    const display = this.playerNeedsToSeeNotes(lastVersionForPlayer);
     if (display) {
       this.modalService.open(this.modalComponent);
       this.http.post('/api/player/lastVersionNotes/' + this.config.version, '')
@@ -37,10 +37,10 @@ export class VersionService {
   }
 
   private playerNeedsToSeeNotes(lastVersionForPlayer: string) {
-    let display: boolean = false;
+    let display = false;
     if (lastVersionForPlayer !== undefined) {
-      let currentParts: string[] = this.config.version.split('.');
-      let playerParts: string[] = lastVersionForPlayer.split('.');
+      const currentParts: string[] = this.config.version.split('.');
+      const playerParts: string[] = lastVersionForPlayer.split('.');
       if (currentParts.length !== playerParts.length) {
         display = true;
       }

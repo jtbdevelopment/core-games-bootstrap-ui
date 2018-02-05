@@ -6,10 +6,10 @@ import {HttpClient} from '@angular/common/http';
   templateUrl: './admin-stats.component.html',
 })
 export class AdminStatsComponent {
-  private static dayInSeconds: number = 86400;
+  private static dayInSeconds = 86400;
 
-  public playerCount: number = 0;
-  public gameCount: number = 0;
+  public playerCount = 0;
+  public gameCount = 0;
   public gamesCreated: number[] = [0, 0, 0];
   public playersCreated: number[] = [0, 0, 0];
   public playerLogins: number[] = [0, 0, 0];

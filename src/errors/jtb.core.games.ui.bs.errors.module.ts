@@ -26,6 +26,6 @@ export {DefaultErrorComponent} from './default-error.component';
 })
 export class JTBCoreGamesUIBSErrorsModule {
   // noinspection JSUnusedLocalSymbols
-  constructor(private errorListener: BootstrapErrorListenerService) {
+  constructor(errorListener: BootstrapErrorListenerService) {
   }
 }

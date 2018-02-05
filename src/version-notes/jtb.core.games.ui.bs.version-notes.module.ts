@@ -26,7 +26,7 @@ export {DefaultVersionNotesComponent} from './default-version-notes.component';
 })
 export class JTBCoreGamesUIBSVersionNotesModule {
   // noinspection JSUnusedLocalSymbols
-  constructor(private versionService: VersionService) {
+  constructor(versionService: VersionService) {
   }
 }
 

@@ -18,10 +18,10 @@ class MockFriendService {
 }
 
 class MockConfig implements AppConfig {
-  releaseNotes: string = '';
-  hoverMenu: boolean = false;
-  appName: string = '';
-  version: string = '';
+  releaseNotes = '';
+  hoverMenu = false;
+  appName = '';
+  version = '';
   inviteFriendsMessage = 'come play games!';
 }
 

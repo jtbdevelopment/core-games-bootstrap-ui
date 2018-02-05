@@ -22,8 +22,8 @@ class MockPlayerService {
 describe('admin switch player component', () => {
   let httpMock: HttpTestingController;
 
-  let initialPlayer = new Player({id: 'loggedin'});
-  let simUser = new Player({id: 'sim'});
+  const initialPlayer = new Player({id: 'loggedin'});
+  const simUser = new Player({id: 'sim'});
 
   let fixture: ComponentFixture<AdminSwitchPlayerComponent>;
 
@@ -58,14 +58,14 @@ describe('admin switch player component', () => {
   });
 
   describe('it after initial page of users loaded', () => {
-    let players = [
+    const players = [
       new Player({id: 'id1', displayName: 'dn1'}),
       new Player({id: 'id2', displayName: 'dn2'}),
       new Player({id: 'id3', displayName: 'dn4'}),
       new Player({id: 'id4', displayName: 'dn4'}),
     ];
     beforeEach(() => {
-      let request = httpMock.expectOne(
+      const request = httpMock.expectOne(
         (req: HttpRequest<any>) => req.url === '/api/player/admin/playersLike' &&
           req.params.get('pageSize') === '20' &&
           req.params.get('page') === '0' &&
@@ -91,7 +91,7 @@ describe('admin switch player component', () => {
     });
 
     it('can change pages', fakeAsync(() => {
-      let newPlayers = [
+      const newPlayers = [
         new Player({id: 'id7', displayName: 'dn7'}),
         new Player({id: 'id8', displayName: 'dn8'}),
         new Player({id: 'id9', displayName: 'dn9'}),
@@ -103,7 +103,7 @@ describe('admin switch player component', () => {
       tick();
       fixture.componentInstance.changePage();
 
-      let request = httpMock.expectOne(
+      const request = httpMock.expectOne(
         (req: HttpRequest<any>) => req.url === '/api/player/admin/playersLike' &&
           req.params.get('pageSize') === '20' &&
           req.params.get('page') === '1' &&
@@ -122,7 +122,7 @@ describe('admin switch player component', () => {
     }));
 
     it('can change search text', () => {
-      let newPlayers = [
+      const newPlayers = [
         new Player({id: 'id7', displayName: 'dn7'})
       ];
 
@@ -130,7 +130,7 @@ describe('admin switch player component', () => {
       fixture.detectChanges();
       fixture.componentInstance.refreshUsers();
 
-      let request = httpMock.expectOne(
+      const request = httpMock.expectOne(
         (req: HttpRequest<any>) => req.url === '/api/player/admin/playersLike' &&
           req.params.get('pageSize') === '20' &&
           req.params.get('page') === '0' &&

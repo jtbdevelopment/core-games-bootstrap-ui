@@ -8,5 +8,5 @@ import {Component} from '@angular/core';
     'class': 'modal-backdrop fade show'
   }
 })
-export class JTBModalBackdrop {
+export class JTBModalBackdropComponent {
 }

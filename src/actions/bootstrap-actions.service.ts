@@ -45,17 +45,17 @@ export class BootstrapActionsService {
   }
 
   public takeAction(httpObservable: Observable<Object>): Observable<Game> {
-    let observable: Subject<Game> = new Subject<Game>();
+    const observable: Subject<Game> = new Subject<Game>();
     this.backdrop.addBackdrop();
     httpObservable
       .subscribe(json => {
-        let game = this.gameFactory.newGame(json);
+        const game = this.gameFactory.newGame(json);
         this.gameCache.putGame(game);
         observable.next(game);
         this.backdrop.removeBackdrop();
       }, error => {
         console.log(JSON.stringify(error));
-        let ngbModalRef = this.modalService.open(this.errorModal);
+        const ngbModalRef = this.modalService.open(this.errorModal);
         ngbModalRef.componentInstance.errorMessage = error.error;
         observable.complete();
         this.backdrop.removeBackdrop();
@@ -64,8 +64,8 @@ export class BootstrapActionsService {
   }
 
   public takeActionWithConfirm(message: string, httpObservable: Observable<Object>): Observable<Game> {
-    let observable: Subject<Game> = new Subject<Game>();
-    let ngbModalRef = this.modalService.open(this.confirmModal);
+    const observable: Subject<Game> = new Subject<Game>();
+    const ngbModalRef = this.modalService.open(this.confirmModal);
     ngbModalRef.componentInstance.confirmMessage = message;
     ngbModalRef.result.then(() => {
       this.takeAction(httpObservable).subscribe((game: Game) => {
@@ -103,8 +103,8 @@ export class BootstrapActionsService {
 
   public rematch(game: Game): void {
     this.ads.showAdPopup().then(() => {
-      this.takeAction(this.gameAction(game, 'rematch')).subscribe((game: Game) => {
-        this.router.navigateByUrl(game.standardLink());
+      this.takeAction(this.gameAction(game, 'rematch')).subscribe((newGame: Game) => {
+        this.router.navigateByUrl(newGame.standardLink());
       });
     });
   }
