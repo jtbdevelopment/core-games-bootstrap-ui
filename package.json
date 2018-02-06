@@ -1,6 +1,7 @@
 {
   "name": "jtb-core-games-bootstrap-ui",
   "version": "2.0.2",
+  "description": "Core games leveraging bootstrap to match server side core-games",
   "repository": {
     "type": "git",
     "url": "https://github.com/jtbdevelopment/core-games-bootstrap-ui"
@@ -17,6 +18,10 @@
   "bugs": {
     "url": "https://github.com/jtbdevelopment/core-games-bootstrap-ui/issues"
   },
+  "main": "jtb-core-games-bootstrap-ui.umd.js",
+  "module": "jtb-core-games-bootstrap-ui.js",
+  "jsnext:main": "jtb-core-games-bootstrap-ui.js",
+  "typings": "jtb-core-games-bootstrap-ui.d.ts",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -28,6 +33,23 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --runInBand"
+  },
+  "peerDependencies": {
+    "@angular/common": "^5.2.3",
+    "@angular/compiler": "^5.2.3",
+    "@angular/compiler-cli": "^5.2.3",
+    "@angular/core": "^5.2.3",
+    "@angular/forms": "^5.2.3",
+    "@angular/http": "^5.2.3",
+    "@angular/platform-browser": "^5.2.3",
+    "@angular/platform-browser-dynamic": "^5.2.3",
+    "@angular/router": "^5.2.3",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0",
+    "bootstrap": "^4.0.0",
+    "core-js": "^2.4.1",
+    "jtb-core-games-ui": "3.0.7",
+    "rxjs": "^5.5.2",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/animations": "^5.2.3",
@@ -46,7 +68,7 @@
     "@types/node": "~6.0.60",
     "angular-in-memory-web-api": "^0.3.2",
     "atmosphere.js": "^2.3.3",
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0",
     "codelyzer": "~3.2.0",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",

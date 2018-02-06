@@ -180,7 +180,7 @@ gulp.task('copy:build', function () {
  * 8. Copy package.json from /src to /dist
  */
 gulp.task('copy:manifest', function () {
-  return gulp.src([`${srcFolder}/package.json`])
+  return gulp.src([`${rootFolder}/package.json`])
     .pipe(gulp.dest(distFolder));
 });
 
@@ -209,6 +209,7 @@ gulp.task('clean:build', function () {
 gulp.task('compile', function () {
     runSequence(
         'clean:dist',
+      'copy:source',
         'copy:source',
         'inline-resources',
         'ngc',
