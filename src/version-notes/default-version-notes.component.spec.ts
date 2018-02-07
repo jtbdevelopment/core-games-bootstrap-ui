@@ -4,7 +4,7 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {AppConfig} from 'jtb-core-games-ui';
 
 
-let releaseNotes = 'We made some changes!';
+const releaseNotes = 'We made some changes!';
 
 class MockAppConfig implements AppConfig {
   appName = '';

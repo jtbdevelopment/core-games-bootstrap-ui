@@ -86,7 +86,7 @@ describe('Component:  sign in component', () => {
     fixture.detectChanges();
     const screen = fixture.nativeElement;
     expect(fixture).toMatchSnapshot();
-    let fbButton = screen.querySelector('#fb-login');
+    const fbButton = screen.querySelector('#fb-login');
     fbButton.click();
     expect(fbLogin.initiateLogin).toHaveBeenCalled();
   }));

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component:  bootstrap backdrop component displays backdrop 1`] = `
-<jtb-modal-backdrop>
+<jtb-modal-backdrop
+  backdropClass={[Function String]}
+>
   
 </jtb-modal-backdrop>
 `;

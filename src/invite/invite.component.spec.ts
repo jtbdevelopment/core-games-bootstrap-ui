@@ -65,7 +65,7 @@ describe('Component:  invite component', () => {
 
   it('subscribes to friends and updates clear chosen', () => {
     fixture.componentInstance.chosen = [new Invitable('d3', 'n3')];
-    let friends = [new Invitable('d1', 'n1'), new Invitable('d2', 'n2')];
+    const friends = [new Invitable('d1', 'n1'), new Invitable('d2', 'n2')];
     friendService.invitableFriendSubject.next(friends);
     fixture.detectChanges();
     expect(fixture.componentInstance.chosen).toEqual([]);
@@ -80,7 +80,7 @@ describe('Component:  invite component', () => {
   });
 
   it('invite invites the chosen', () => {
-    let friends = [new Invitable('d1', 'n1'), new Invitable('d2', 'n2'), new Invitable('x1', 'x3')];
+    const friends = [new Invitable('d1', 'n1'), new Invitable('d2', 'n2'), new Invitable('x1', 'x3')];
     friendService.invitableFriendSubject.next(friends);
     fixture.componentInstance.chosen = friends;
     fixture.detectChanges();

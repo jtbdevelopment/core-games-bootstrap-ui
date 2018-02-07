@@ -28,8 +28,8 @@ describe('Component:  signed in component', () => {
 
   it('tells player service to load and navigates', () => {
     const fixture = TestBed.createComponent(SignedInComponent);
-    let mockPlayerService = fixture.debugElement.injector.get(PlayerService);
-    let router = fixture.debugElement.injector.get(Router);
+    const mockPlayerService = fixture.debugElement.injector.get(PlayerService);
+    const router = fixture.debugElement.injector.get(Router);
     expect(mockPlayerService.loadLoggedInPlayer).toHaveBeenCalled();
     expect(router.navigateByUrl).toHaveBeenCalledWith('/main');
   });

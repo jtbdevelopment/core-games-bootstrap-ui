@@ -25,7 +25,7 @@ export class BootstrapBackdropService {
   }
 
   public addBackdrop(): void {
-    let containerEl = document.querySelector('body');
+    const containerEl = document.querySelector('body');
     this._backdropCount += 1;
     if (this._backdrop === undefined) {
       this._backdrop = this._backdropFactory.create(this._injector);
@@ -38,7 +38,7 @@ export class BootstrapBackdropService {
     this._backdropCount -= 1;
     if (this._backdropCount <= 1) {
       if (this._backdrop !== undefined) {
-        let backdropNativeEl = this._backdrop.location.nativeElement;
+        const backdropNativeEl = this._backdrop.location.nativeElement;
         backdropNativeEl.parentNode.removeChild(backdropNativeEl);
         this._backdrop.destroy();
         this._backdrop = undefined;
