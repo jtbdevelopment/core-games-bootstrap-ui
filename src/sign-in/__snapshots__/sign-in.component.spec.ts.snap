@@ -65,7 +65,7 @@ exports[`Component:  sign in component clicking fb initiates manual fb login 1`]
             id="fb-login"
           >
             <img
-              src="../../../images/sign-in-with-facebook.png"
+              src="/assets/sign-in-with-facebook.png"
             />
           </a>
           
@@ -338,7 +338,7 @@ exports[`Component:  sign in component non manual fb logins displays facebook af
             id="fb-login"
           >
             <img
-              src="../../../images/sign-in-with-facebook.png"
+              src="/assets/sign-in-with-facebook.png"
             />
           </a>
           
