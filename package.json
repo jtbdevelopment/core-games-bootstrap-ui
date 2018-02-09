@@ -1,6 +1,6 @@
 {
   "name": "jtb-core-games-bootstrap-ui",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Core games leveraging bootstrap to match server side core-games",
   "repository": {
     "type": "git",
